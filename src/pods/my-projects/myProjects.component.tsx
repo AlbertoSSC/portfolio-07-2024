@@ -1,3 +1,4 @@
+import { ArrowUp } from '@/assets/images/icons/component/arrow';
 import { Button, Tag } from '@/common';
 
 export const MyProjectsComponent: React.FC = () => {
@@ -7,12 +8,11 @@ export const MyProjectsComponent: React.FC = () => {
         <h3 className="shape">PROJECTS</h3>
       </header>
 
-        <div className="projects-divider">
-          <h4 className="skew-italic">Professional work</h4>
-          <div className="divider"></div>
-        </div>
+      <div className="projects-divider">
+        <h4 className="skew-italic">Professional work</h4>
+        <div className="divider"></div>
+      </div>
       <main className="component-size projects-main">
-        
         <div className="center-content projects">
           <article className="content-container">
             <section className="projects-frame-container frame-white">
@@ -21,7 +21,12 @@ export const MyProjectsComponent: React.FC = () => {
                 <span className="bg-frame-char">W</span>
 
                 <div className="description-content">
-                  <Button label="CHECK IT OUT" color="accent" onClick={() => {}} />
+                  <Button
+                    label="CHECK IT OUT"
+                    endIcon={<ArrowUp color="#00ffff" height="32" rotate={45} />}
+                    color="accent"
+                    onClick={() => {}}
+                  />
 
                   <ul className="description-list">
                     <li className="description-text skew-italic">Context</li>

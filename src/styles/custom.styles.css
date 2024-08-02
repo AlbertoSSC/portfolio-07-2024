@@ -522,6 +522,7 @@
 .contact-description {
   color: var(--primary-color-dark);
   font-size: 20px;
+  font-weight: var(--inter-font-medium);
   text-align: end;
 
   max-width: 750px;
@@ -540,11 +541,10 @@
 .divider {
   position: absolute;
   top: 58px;
-  left: 0;
   transform: translate(0%, 50%);
   border: 1px solid white;
   opacity: 0.2;
-  width: 100%;
+  width: 80%;
 
   @media (width < 420px) {
     display: none;
@@ -588,14 +588,17 @@
 
   border: 2px solid white;
   border-radius: var(--border-radius-button);
-
+  
   font-weight: var(--inter-font-medium);
   font-size: 20px;
-
-  transition: transform 0.5s ease;
-
+  
+  transition: all 0.5s ease-in-out;
+  
   &:hover {
     transform: translate(0px, -3px);
+    outline-offset: 8px;
+    outline: 1px solid var(--primary-color);
+    
 
     .icon {
       transform: scale(1.1) rotate(45deg) translate(5px, -8px);
