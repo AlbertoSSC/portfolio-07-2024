@@ -5,7 +5,9 @@ export const HeroComponent: React.FC = () => {
         <div className="component-size hero">
           <section className="hero-title">
             <h1>LET'S GROW YOUR SITE</h1>
-            <span className="secondary-font">together</span>
+            <div className="secondary-font">
+              <span>together</span>
+            </div>
           </section>
           <section className="addon">
             <div className="shape">
