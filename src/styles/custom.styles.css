@@ -47,7 +47,7 @@
 .component-size {
   display: flex;
   justify-content: center;
-  max-width: 650px;
+  max-width: 720px;
   height: min(100dvh, 1200px);
 
   @media (height < 750px) {
@@ -128,6 +128,8 @@
 }
 
 .about-me {
+  max-width: 650px;
+
   & p {
     font-size: 21px;
 
@@ -351,8 +353,8 @@
   transform: translate(-4%, -2.5%);
   z-index: 1;
 
-  width: 290px;
-  height: 365px;
+  width: 265px;
+  height: 342px;
 
   border: 1px solid var(--neutral-color);
   border-radius: 24px;
@@ -369,7 +371,7 @@
   border-radius: 24px;
 }
 
-.tech-stack-white-bg {
+.white-shape {
   border-radius: 24px;
   background-color: white;
   padding-bottom: 1rem;
@@ -378,7 +380,7 @@
   flex-direction: column;
   align-items: center;
   clip-path: path(
-    'M 0 95 L 0 345 L 300 345 L 300 0 L 90 0 Q 56 0 55 30 Q 55 65 25 70 Q 0 75 0 100 Z'
+    'M 0 95 L 0 345 L 300 345 L 300 0 L 62 0 Q 46 0 45 20 Q 45 40 20 40 Q 0 40 0 70 Z'
   );
 
   @media (width < 420px) {
@@ -436,6 +438,14 @@
   @media (width < 420px) {
     padding-bottom: 1rem;
   }
+}
+
+.reverse-project-display {
+  flex-direction: row-reverse;
+}
+
+.project-image {
+  width: 100%;
 }
 
 .contact-container {
@@ -588,17 +598,16 @@
 
   border: 2px solid white;
   border-radius: var(--border-radius-button);
-  
+
   font-weight: var(--inter-font-medium);
   font-size: 20px;
-  
+
   transition: all 0.5s ease-in-out;
-  
+
   &:hover {
     transform: translate(0px, -3px);
     outline-offset: 8px;
     outline: 1px solid var(--primary-color);
-    
 
     .icon {
       transform: scale(1.1) rotate(45deg) translate(5px, -8px);
