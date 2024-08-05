@@ -1,0 +1,50 @@
+.workProjectsContainer {
+  @media (width < 420px) {
+    height: 1350px;
+  }
+}
+
+.projectsMain {
+  min-height: 650px;
+  flex-direction: column;
+  justify-content: space-around;
+
+  @media (width < 420px) {
+    min-height: 900px;
+    padding-bottom: 3rem;
+  }
+}
+
+.projectsDivider {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+
+  & h4 {
+    color: var(--neutral-color);
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 0.5;
+    z-index: 1;
+    padding-inline: 3rem;
+    background-color: var(--primary-color-dark);
+  }
+  @media (width < 420px) {
+    padding-bottom: 5rem;
+  }
+}
+
+.divider {
+  position: absolute;
+  top: 90px;
+
+  border: 1px solid white;
+  opacity: 0.2;
+  width: 80%;
+
+  @media (width < 420px) {
+    display: none;
+  }
+}

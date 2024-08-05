@@ -1,20 +1,23 @@
 import { ArrowUp } from '@/assets/images/icons/component/arrow';
 import { Button, Tag } from '@/common';
 
-// import { ProjectComponent } from './project.component';
-// import testImage from '@/assets/images/api.png';
+import { ProjectComponent } from './project.component';
+import testImage from '@/assets/images/api.png';
+
+import globalStyles from '@/styles/global-styles.module.css';
+import styles from './project.component.module.css';
 
 export const WorkProjectsShowcase = () => {
-  // const project01_Imgs = [testImage, testImage, testImage];
+  const project01_Imgs = [testImage, testImage];
 
   return (
-    <div className="content-container">
-      <div className="projects-frame-container frame-white">
-        <section className="description-container">
-          <span className="bg-frame-title">02-WORK</span>
-          <span className="bg-frame-char">W</span>
+    <>
+      <div className={`${styles.projectsFrameContainer} ${styles.frameWhite}`}>
+        <section className={styles.descriptionContainer}>
+          <span className={styles.bgFrameTitle}>02-WORK</span>
+          <span className={styles.bgFrameChar}>W</span>
 
-          <div className="description-content">
+          <div className={styles.descriptionContent}>
             <Button
               label="CHECK IT OUT"
               endIcon={<ArrowUp color="#00ffff" height="32" rotate={45} />}
@@ -22,28 +25,52 @@ export const WorkProjectsShowcase = () => {
               onClick={() => {}}
             />
 
-            <ul className="description-list">
-              <li className="description-text skew-italic">Context</li>
-              <li className="description-text skew-italic">Testing</li>
-              <li className="description-text skew-italic">Hooks</li>
-              <li className="description-text skew-italic">Material-UI</li>
-              <li className="description-text skew-italic">Emotion/css</li>
-              <li className="description-text skew-italic">Git & GitHub</li>
+            <ul className={styles.descriptionList}>
+              <li
+                className={`${styles.descriptionText} ${globalStyles.skewItalic}`}
+              >
+                Context
+              </li>
+              <li
+                className={`${styles.descriptionText} ${globalStyles.skewItalic}`}
+              >
+                Testing
+              </li>
+              <li
+                className={`${styles.descriptionText} ${globalStyles.skewItalic}`}
+              >
+                Hooks
+              </li>
+              <li
+                className={`${styles.descriptionText} ${globalStyles.skewItalic}`}
+              >
+                Material-UI
+              </li>
+              <li
+                className={`${styles.descriptionText} ${globalStyles.skewItalic}`}
+              >
+                Emotion/css
+              </li>
+              <li
+                className={`${styles.descriptionText} ${globalStyles.skewItalic}`}
+              >
+                Git & GitHub
+              </li>
             </ul>
           </div>
         </section>
 
-        <section className="tech-stack-container">
+        <section className={styles.techStackContainer}>
           <div>
-            <span className="tech-stack-number">02</span>
-            <div className="tech-stack-outline-shape"></div>
-            <div className="tech-stack-blue-bg">
-              <div className="white-shape">
-                <div className="tech-stack-title">
-                  <span className="skew-italic">TECH</span>
-                  <span className="skew-italic">STACK</span>
+            <span className={styles.techStackNumber}>02</span>
+            <div className={styles.techStackOutlineShape}></div>
+            <div className={styles.techStackBlueBg}>
+              <div className={styles.techStackWhiteShape}>
+                <div className={styles.techStackTitle}>
+                  <span className={globalStyles.skewItalic}>TECH</span>
+                  <span className={globalStyles.skewItalic}>STACK</span>
                 </div>
-                <ul className="ul-gap">
+                <ul className={styles.ulGap}>
                   <li>
                     <Tag label="HTML" style="outlined" />
                   </li>
@@ -51,10 +78,10 @@ export const WorkProjectsShowcase = () => {
                     <Tag label="CSS" style="outlined" />
                   </li>
                   <li>
-                    <Tag label="TYPESCRIPT" style="primary-border" />
+                    <Tag label="TYPESCRIPT" style="primaryBorder" />
                   </li>
                   <li>
-                    <Tag label="REACT" style="primary-dark" />
+                    <Tag label="REACT" style="primaryDark" />
                   </li>
                 </ul>
               </div>
@@ -62,15 +89,17 @@ export const WorkProjectsShowcase = () => {
           </div>
         </section>
 
-        <section className="projects-container">
-          {/* <ProjectComponent
-            title01="Holaaaa"
-            title02="q tal"
-            description="muy bien y tu ¿qué tal andas?"
+        <section className={styles.projectsContainer}>
+          <ProjectComponent
+            title01="ADOPTION"
+            title02="STORE"
+            description={`Simulador web para la adopc de máscotas
+                Simulador web para la adopc de máscotas
+                Simulador web para la adopció de máscotas`}
             images={project01_Imgs}
-          /> */}
+          />
         </section>
       </div>
-    </div>
+    </>
   );
 };

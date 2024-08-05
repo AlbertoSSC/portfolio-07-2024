@@ -1,3 +1,5 @@
+import styles from './project.component.module.css';
+
 interface Props {
   title01: string;
   title02: string;
@@ -16,22 +18,21 @@ export const ProjectComponent: React.FC<Props> = props => {
   } = props;
 
   return (
-    <div className="project-display  blue-bg">
+    <div className={styles.projectWhiteBg}>
       <div
-        className={`white-shape ${
-          reverse ? 'reverse-project-display' : ''
-        }`}
+        className={`${styles.contentProject} 
+          ${reverse ? styles.reverseProjectDisplay : ''}`}
       >
-        <section className="content-project">
+        <section className={styles.projectDescription}>
           <div>
-            <h4 style={{ color: 'black' }}>{title01}</h4>
-            <h4 style={{ color: 'black' }}>{title02}</h4>
+            <h4 style={{ color: '#263440' }}>{title01}</h4>
+            <h4 style={{ color: '#506e86' }}>{title02}</h4>
           </div>
 
           <p style={{ color: 'black' }}>{description}</p>
         </section>
 
-        <section className="project-images">
+        <section className={styles.projectImages}>
           {images!.map((image, index) => {
             return <img key={`image ${index}`} src={image} alt="work-01" />;
           })}

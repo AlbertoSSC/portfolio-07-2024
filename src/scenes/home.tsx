@@ -5,13 +5,15 @@ import {
   ContactComponent,
 } from '@/pods';
 
+import globalStyles from '@/styles/global-styles.module.css';
+
 export const HomeComponent: React.FC = () => (
-  <div className="home-layout">
-    <header className="language-top-header">
+  <div className={globalStyles.homeLayout}>
+    <header className={globalStyles.languageTopHeader}>
       <span>A S S C</span>
-      <span className="language-salector">SP || EN</span>
+      <span className={globalStyles.languageSalector}>SP || EN</span>
     </header>
-    <main className='home-main'>
+    <main className={globalStyles.homeMain}>
       <HeroComponent />
       <AboutMeComponent />
       <MyProjectsComponent />

@@ -1,16 +1,19 @@
+import globalStyles from '@/styles/global-styles.module.css';
+import styles from './hero.module.css';
+
 export const HeroComponent: React.FC = () => {
   return (
     <>
-      <section className="component-container">
-        <div className="component-size hero">
-          <section className="hero-title">
+      <section className={globalStyles.componentContainer}>
+        <div className={`${globalStyles.componentSize} ${styles.hero}`}>
+          <section className={styles.heroTitle}>
             <h1>LET'S GROW YOUR SITE</h1>
-            <div className="secondary-font">
+            <div className={styles.secondaryFont}>
               <span>together</span>
             </div>
           </section>
-          <section className="addon">
-            <div className="shape">
+          <section className={styles.addon}>
+            <div className={globalStyles.sectionTitleShape}>
               <h2>FRONT-END & UI DESIGN</h2>
             </div>
           </section>

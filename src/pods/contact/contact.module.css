@@ -1,0 +1,152 @@
+.contactContainer {
+  justify-content: flex-start;
+  padding-block: 4rem;
+  width: 98dvw;
+  height: 700px;
+
+  background-color: white;
+
+  @media (width < 770px) {
+    height: 600px;
+  }
+  @media (width < 420px) {
+    height: 540px;
+  }
+}
+
+.contactStyle {
+  display: flex;
+  justify-content: end;
+  width: min(90dvw, 1200px);
+}
+
+.contactContent {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 90%;
+}
+
+.contactTitle {
+  font-size: 68px;
+  color: var(--primary-color-dark);
+  font-weight: var(--inter-font-black);
+  line-height: 1;
+  text-align: end;
+  margin: 0;
+  padding-block: 3rem;
+
+  max-width: 750px;
+
+  @media (width < 770px) {
+    padding-block: 2rem;
+    font-size: 56px;
+  }
+  @media (width < 420px) {
+    font-size: 28px;
+  }
+}
+
+.contactLinks {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  & a {
+    font-weight: var(--inter-font-bold);
+    font-size: 40px;
+    text-decoration: underline;
+    letter-spacing: 2px;
+
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: var(--primary-color);
+      & img {
+        opacity: 0.65;
+        filter: saturate(3);
+        transform: scale(1.1);
+        transition: all 0.5s ease;
+      }
+    }
+    @media (width < 770px) {
+      font-size: 32px;
+      padding-bottom: 0.3rem;
+    }
+    @media (width < 420px) {
+      letter-spacing: 0;
+      font-size: 18px;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  & img {
+    padding-left: 2rem;
+    height: 32px;
+    transform: translateY(3px);
+
+    @media (width < 770px) {
+      height: 28px;
+    }
+
+    @media (width < 420px) {
+      transform: translateY(8px);
+      height: 24px;
+    }
+  }
+}
+
+.contactImg {
+  transition: transform 0.5s ease;
+}
+
+.contactDescription {
+  color: var(--primary-color-dark);
+  font-size: 20px;
+  font-weight: var(--inter-font-medium);
+  text-align: end;
+
+  max-width: 750px;
+  padding-top: 2rem;
+  padding-block: 0 0;
+
+  @media (width < 770px) {
+    max-width: 550px;
+    padding-top: 1rem;
+  }
+  @media (width < 420px) {
+    padding-top: 0.4rem;
+    font-size: 16px;
+  }
+}
+
+.popover {
+  position: absolute;
+  bottom: 100%;
+
+  color: var(--primary-color-dark);
+  font-size: 16px;
+  font-weight: var(--inter-font-bold);
+  background-color: var(--accent-color);
+  padding: 0.5rem 2rem;
+
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+
+  animation: fadeIn 0.3s forwards, fadeOut 0.5s forwards 1.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  to {
+    transform: translateY(6px);
+    opacity: 0;
+  }
+}

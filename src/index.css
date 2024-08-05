@@ -1,5 +1,5 @@
 @import './styles/variables.css';
-@import './styles/custom.styles.css';
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
@@ -16,6 +16,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 a {
   font-weight: 500;
   color: var(--primary-color-dark);
@@ -28,6 +34,8 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   min-height: 100dvh;

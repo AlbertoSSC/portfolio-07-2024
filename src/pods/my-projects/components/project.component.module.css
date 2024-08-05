@@ -1,0 +1,264 @@
+.projectsFrameContainer {
+  position: relative;
+  border-radius: 32px;
+  padding: 1rem;
+  width: 650px;
+  min-height: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  transition: all 1s ease;
+
+  &.frameWhite {
+    border: 3px solid white;
+  }
+
+  &.frameDark {
+    border: 3px solid var(--neutral-color-dark);
+  }
+
+  @media (width < 770px) {
+    width: 580px;
+  }
+
+  @media (width < 420px) {
+    width: 290px;
+    flex-direction: column;
+    max-width: max-content;
+  }
+}
+
+.descriptionContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding-left: 1rem;
+  height: 100%;
+}
+
+.bgFrameTitle {
+  font-size: 56px;
+  font-weight: var(--inter-font-black);
+  color: var(--primary-color);
+  opacity: 0.5;
+}
+
+.bgFrameChar {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-15%, -30%);
+  font-family: 'NorthblueRegular';
+  font-size: 196px;
+  color: var(--primary-color);
+  opacity: 0.08;
+}
+
+.descriptionContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.descriptionList {
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.descriptionText {
+  font-size: 24px;
+  color: var(--primary-color);
+  font-weight: var(--inter-font-bold);
+  list-style-type: none;
+  text-align: right;
+}
+
+.reverseProjectDisplay {
+  flex-direction: row-reverse;
+}
+
+.projectWhiteBg {
+  background-color: var(--neutral-color);
+  border-radius: var(--border-radius-box);
+
+  width: 100%;
+  height: 100%;
+}
+
+.projectDescription {
+  padding: 1rem;
+  width: 50%;
+
+  font-weight: var(--inter-font-medium);
+
+  & h4 {
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    font-weight: var(--inter-font-black);
+    line-height: 1;
+  }
+}
+
+.projectImages {
+  width: 50%;
+  height: 100%;
+  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 8px;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: var(--border-radius-box);
+  }
+
+  @media (width < 420px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.contentProject {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  @media (width < 420px) {
+    flex-direction: column;
+    max-width: max-content;
+    min-height: fit-content;
+  }
+}
+
+.projectWhiteShape {
+  border-radius: 24px;
+  background-color: white;
+  padding-bottom: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  clip-path: path(
+    'M 0 95 L 0 345 L 300 345 L 300 0 L 62 0 Q 46 0 45 20 Q 45 40 20 40 Q 0 40 0 70 Z'
+  );
+
+  @media (width < 420px) {
+    clip-path: path(
+      'M 0 95 L 0 410 L 300 410 L 300 0 L 90 0 Q 56 0 55 30 Q 55 65 25 70 Q 0 75 0 100 Z'
+    );
+  }
+}
+
+.projectsContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.techStackContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(20%, 22%);
+
+  @media (width < 770px) {
+    transform: translate(10%, 15%);
+  }
+  @media (width < 420px) {
+    position: relative;
+  }
+}
+.techStackNumber {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-55%, -35%);
+  font-size: 58px;
+  font-weight: var(--inter-font-black);
+  color: var(--neutral-color);
+}
+
+.techStackOutlineShape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-4%, -2.5%);
+  z-index: 1;
+
+  width: 265px;
+  height: 342px;
+
+  border: 1px solid var(--neutral-color);
+  border-radius: 24px;
+
+  @media (width < 420px) {
+    height: 105%;
+  }
+}
+
+.techStackBlueBg {
+  width: 265px;
+  background-color: var(--primary-color);
+  border: 3px solid var(--primary-color);
+  border-radius: 24px;
+}
+
+.techStackWhiteShape {
+  border-radius: 24px;
+  background-color: white;
+  padding-bottom: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  clip-path: path(
+    'M 0 95 L 0 345 L 300 345 L 300 0 L 62 0 Q 46 0 45 20 Q 45 40 20 40 Q 0 40 0 70 Z'
+  );
+
+  @media (width < 420px) {
+    clip-path: path(
+      'M 0 95 L 0 410 L 300 410 L 300 0 L 90 0 Q 56 0 55 30 Q 55 65 25 70 Q 0 75 0 100 Z'
+    );
+  }
+}
+
+.techStackTitle {
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+
+  color: var(--primary-color-dark);
+  font-weight: var(--inter-font-black);
+  font-size: 32px;
+  line-height: 0.9;
+  padding: 1rem;
+
+  > :first-child {
+    text-align: start;
+  }
+
+  > :last-child {
+    text-align: end;
+  }
+}
+
+.ulGap {
+  margin: 0;
+  padding: 0;
+  > li {
+    list-style-type: none;
+    padding-block: 0.3rem;
+  }
+}
