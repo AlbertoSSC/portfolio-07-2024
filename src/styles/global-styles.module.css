@@ -124,8 +124,11 @@
     outline-offset: 8px;
     outline: 1px solid var(--primary-color);
 
-    .icon {
+    .endIconAnimation {
       transform: scale(1.1) rotate(45deg) translate(5px, -8px);
+    }
+    .startIconAnimation {
+      transform: scale(1.1) translate(-3px, 0px);
     }
   }
 
@@ -134,10 +137,10 @@
     border-color: white;
   }
 
-  &.black {
-    color: var(--neutral-color-dark);
+  &.primaryDark {
+    color: var(--primary-color-dark);
     font-weight: var(--inter-font-bold);
-    border-color: var(--neutral-color-dark);
+    border-color: var(--primary-color-dark);
   }
 
   &.accent {
@@ -150,6 +153,14 @@
 .icon {
   transition: transform 0.5s ease;
 }
+
+.endIconAnimation {
+  transition: transform 0.5s ease;
+}
+.startIconAnimation {
+  transition: transform 0.5s ease;
+}
+
 
 .smallPaddingLeft {
   padding: 0.5rem 2rem 0.5rem 1.5rem;

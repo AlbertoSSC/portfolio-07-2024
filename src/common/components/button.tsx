@@ -1,6 +1,6 @@
 import globalStyles from '@/styles/global-styles.module.css';
 
-type Color = 'white' | 'black' | 'accent';
+type Color = 'white' | 'primaryDark' | 'accent';
 
 interface Props {
   label: string;
@@ -8,10 +8,20 @@ interface Props {
   color: Color;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
+  startIconAnimation?: boolean;
+  endIconAnimation?: boolean;
 }
 
 export const Button: React.FC<Props> = props => {
-  const { label, onClick, color, startIcon, endIcon } = props;
+  const {
+    label,
+    onClick,
+    color,
+    startIcon,
+    endIcon,
+    endIconAnimation,
+    startIconAnimation,
+  } = props;
 
   const buttonClasses = `${globalStyles.customButton} ${globalStyles[color]} ${
     startIcon ? globalStyles.smallPaddingLeft : ''
@@ -19,9 +29,25 @@ export const Button: React.FC<Props> = props => {
 
   return (
     <button onClick={onClick} className={buttonClasses}>
-      {startIcon && <span className={globalStyles.icon}>{startIcon}</span>}
+      {startIcon && (
+        <span
+          className={`${globalStyles.icon} ${
+            startIconAnimation ? globalStyles.startIconAnimation : ''
+          }`}
+        >
+          {startIcon}
+        </span>
+      )}
       {label}
-      {endIcon && <span className={globalStyles.icon}>{endIcon}</span>}
+      {endIcon && (
+        <span
+          className={`${globalStyles.icon} ${
+            endIconAnimation ? globalStyles.endIconAnimation : ''
+          }`}
+        >
+          {endIcon}
+        </span>
+      )}
     </button>
   );
 };

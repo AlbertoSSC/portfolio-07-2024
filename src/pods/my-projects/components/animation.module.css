@@ -1,0 +1,14 @@
+.outlineHeight {
+  height: 350px;
+  transition: all 0.5s ease;
+}
+
+.animateDescription {
+  transition: all 0.5s ease;
+  position: absolute;
+  transform: translateX(-300px) scale(0);
+}
+
+.displayNone {
+  display: none;
+}
