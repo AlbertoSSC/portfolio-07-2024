@@ -1,3 +1,14 @@
+.aboutMeContainer {
+  height: min(100dvh, 920px);
+
+  @media (width < 360px) {
+    height: 1100px;
+  }
+  @media (height < 770px) {
+    height: 900px;
+  }
+}
+
 .aboutMe {
   max-width: 650px;
 
@@ -18,7 +29,11 @@
     }
   }
 
-  @media (width <420px) {
+  @media (width < 576px) {
+    max-width: 500px;
+  }
+
+  @media (width < 576px) {
     height: 1200px;
   }
 }

@@ -7,7 +7,7 @@ import styles from './aboutMe.module.css';
 
 export const AboutMeComponent: React.FC = () => {
   return (
-    <section className={globalStyles.componentContainer}>
+    <section className={`${globalStyles.componentContainer} ${styles.aboutMeContainer}`}>
       <header className={globalStyles.sectionTitleHeader}>
         <h3 className={globalStyles.sectionTitleShape}>ABOUT ME</h3>
       </header>

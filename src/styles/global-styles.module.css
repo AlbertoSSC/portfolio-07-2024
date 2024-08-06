@@ -31,7 +31,7 @@
   align-items: center;
   justify-content: center;
 
-  @media (width < 420px) {
+  @media (width < 576px) {
     max-width: 360px;
     overflow: hidden;
   }
@@ -45,9 +45,8 @@
 
   padding-block: 0rem 6rem;
   width: min(100%, 1200px);
-  height: min(100dvh, 920px);
 
-  @media (width < 420px) {
+  @media (width < 576px) {
     height: 900px;
   }
 }
@@ -56,10 +55,6 @@
   display: flex;
   justify-content: center;
   max-width: 720px;
-
-  @media (height < 750px) {
-    height: 800px;
-  }
 }
 
 .centerContent {
@@ -68,7 +63,7 @@
   align-items: center;
   width: 100%;
 
-  @media (width <420px) {
+  @media (width <576px) {
     justify-content: start;
   }
 }
@@ -103,7 +98,7 @@
 .gap {
   padding-block: 2rem;
 
-  @media (width < 420px) {
+  @media (width < 576px) {
     padding: 2rem;
   }
 }

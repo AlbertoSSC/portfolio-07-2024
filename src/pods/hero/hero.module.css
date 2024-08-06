@@ -1,10 +1,22 @@
-.hero {
-  flex-direction: column-reverse;
-  max-width: 640px;
+.heroContainer {
+  height: min(100dvh, 920px);
+
+  @media (height < 770px) {
+    height: 600px;
+  }
 
   @media (width < 770px) {
     max-width: 600px;
   }
+
+  @media (width < 576px) {
+    max-width: 450px;
+  }
+}
+
+.hero {
+  flex-direction: column-reverse;
+  max-width: 640px;
 
   @media (width < 450px) {
     transform: translateY(-50px);
@@ -17,6 +29,11 @@
   justify-content: end;
   padding-bottom: 0.2rem;
 
+  @media (width < 576px) {
+    justify-content: flex-start;
+    padding-top: 6rem;
+  }
+
   & h2 {
     max-width: 96px;
     padding-block: 0.4rem;
@@ -25,6 +42,10 @@
     font-size: 16px;
     font-weight: var(--inter-font-bold);
     transform: skewX(350deg); /* italic */
+
+    @media (width < 576px) {
+      max-width: fit-content;
+    }
   }
 }
 
@@ -32,6 +53,10 @@
   padding-top: 0.5rem;
   display: flex;
   flex-direction: column;
+
+  @media (width < 576px) {
+    width: min-content;
+  }
 
   & h1 {
     margin: 0;

@@ -1,15 +1,17 @@
 .workProjectsContainer {
-  @media (width < 420px) {
+  @media (width < 576px) {
+    width: 350px;
     height: 1350px;
   }
 }
 
 .projectsMain {
-  min-height: 650px;
+  min-height: 550px;
   flex-direction: column;
   justify-content: space-around;
 
-  @media (width < 420px) {
+  @media (width < 576px) {
+    width: 450px;
     min-height: 900px;
     padding-bottom: 3rem;
   }
@@ -31,8 +33,9 @@
     padding-inline: 3rem;
     background-color: var(--primary-color-dark);
   }
-  @media (width < 420px) {
-    padding-bottom: 5rem;
+
+  @media (width < 576px) {
+    padding-bottom: 2rem;
   }
 }
 
@@ -44,7 +47,7 @@
   opacity: 0.2;
   width: 80%;
 
-  @media (width < 420px) {
+  @media (width < 576px) {
     display: none;
   }
 }

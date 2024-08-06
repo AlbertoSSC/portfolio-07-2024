@@ -22,7 +22,11 @@
     width: 580px;
   }
 
-  @media (width < 420px) {
+  @media (width < 576px) {
+    width: 450px;
+  }
+
+  @media (width < 576px) {
     width: 290px;
     flex-direction: column;
     max-width: max-content;
@@ -45,6 +49,10 @@
   font-weight: var(--inter-font-black);
   color: var(--primary-color);
   opacity: 0.5;
+
+  @media (width < 576px) {
+    font-size: 45px;
+  }
 }
 
 .bgFrameChar {
@@ -122,7 +130,7 @@
     border-radius: var(--border-radius-box);
   }
 
-  @media (width < 420px) {
+  @media (width < 576px) {
     display: flex;
     flex-direction: column;
   }
@@ -135,7 +143,7 @@
   width: 100%;
   height: 100%;
 
-  @media (width < 420px) {
+  @media (width < 576px) {
     flex-direction: column;
     max-width: max-content;
     min-height: fit-content;
@@ -155,7 +163,7 @@
     'M 0 95 L 0 345 L 300 345 L 300 0 L 62 0 Q 46 0 45 20 Q 45 40 20 40 Q 0 40 0 70 Z'
   );
 
-  @media (width < 420px) {
+  @media (width < 576px) {
     clip-path: path(
       'M 0 95 L 0 410 L 300 410 L 300 0 L 90 0 Q 56 0 55 30 Q 55 65 25 70 Q 0 75 0 100 Z'
     );
@@ -176,10 +184,12 @@
   @media (width < 770px) {
     transform: translate(10%, 15%);
   }
-  @media (width < 420px) {
+
+  @media (width < 576px) {
     position: relative;
   }
 }
+
 .techStackNumber {
   position: absolute;
   top: 0;
@@ -203,7 +213,7 @@
   border: 1px solid var(--neutral-color);
   border-radius: 24px;
 
-  @media (width < 420px) {
+  @media (width < 576px) {
     height: 105%;
   }
 }
@@ -227,7 +237,7 @@
     'M 0 95 L 0 345 L 300 345 L 300 0 L 62 0 Q 46 0 45 20 Q 45 40 20 40 Q 0 40 0 70 Z'
   );
 
-  @media (width < 420px) {
+  @media (width < 576px) {
     clip-path: path(
       'M 0 95 L 0 410 L 300 410 L 300 0 L 90 0 Q 56 0 55 30 Q 55 65 25 70 Q 0 75 0 100 Z'
     );

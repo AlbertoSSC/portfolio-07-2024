@@ -26,7 +26,7 @@
   --inter-font-semi-bold-italic: 600;
 
   --break-point-tablet: 770px;
-  --break-point-phone: 420px;
+  --break-point-phone: 576px;
 }
 
 @font-face {

@@ -9,7 +9,7 @@
   @media (width < 770px) {
     height: 600px;
   }
-  @media (width < 420px) {
+  @media (width < 576px) {
     height: 540px;
   }
 }
@@ -42,7 +42,7 @@
     padding-block: 2rem;
     font-size: 56px;
   }
-  @media (width < 420px) {
+  @media (width < 576px) {
     font-size: 28px;
   }
 }
@@ -74,7 +74,12 @@
       font-size: 32px;
       padding-bottom: 0.3rem;
     }
-    @media (width < 420px) {
+
+    @media (width < 576px) {
+      font-size: 24px;
+    }
+
+    @media (width < 576px) {
       letter-spacing: 0;
       font-size: 18px;
       padding-bottom: 0.5rem;
@@ -90,7 +95,7 @@
       height: 28px;
     }
 
-    @media (width < 420px) {
+    @media (width < 576px) {
       transform: translateY(8px);
       height: 24px;
     }
@@ -115,7 +120,7 @@
     max-width: 550px;
     padding-top: 1rem;
   }
-  @media (width < 420px) {
+  @media (width < 576px) {
     padding-top: 0.4rem;
     font-size: 16px;
   }
