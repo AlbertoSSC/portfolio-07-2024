@@ -1,6 +1,13 @@
 .outlineHeight {
-  height: 350px;
+  height: 300px;
   transition: all 0.5s ease;
+
+  @media (width <770px) {
+    height: 320px;
+  }
+  @media (width <576px) {
+    height: max-content;
+  }
 }
 
 .animateDescription {
@@ -11,4 +18,20 @@
 
 .displayNone {
   display: none;
+}
+
+.projectsNumberBgAnimation {
+  animation: numberTranslation 0.5s ease forwards;
+ 
+}
+
+@keyframes numberTranslation {
+  0% {
+    color: var(--neutral-color);
+    transform: translate(-160px, 28px);
+  }
+  100% {
+    color: var(--primary-color);
+    transform: translate(0px, 0px);
+  }
 }

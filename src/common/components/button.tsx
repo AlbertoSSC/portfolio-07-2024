@@ -1,6 +1,6 @@
 import globalStyles from '@/styles/global-styles.module.css';
 
-type Color = 'white' | 'primaryDark' | 'accent';
+type Color = 'white' | 'primaryDark' | 'accent' | 'primaryDarkBlack';
 
 interface Props {
   label: string;

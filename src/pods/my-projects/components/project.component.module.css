@@ -3,7 +3,7 @@
   border-radius: 32px;
   padding: 1rem;
   width: 650px;
-  height: 500px;
+  height: 600px;
 
   display: flex;
   flex-direction: column;
@@ -12,19 +12,16 @@
   transition: all 1s ease;
 
   &.frameWhite {
-    border: 3px solid white;
+    border: 2px solid var(--neutral-color);
   }
 
   &.frameDark {
-    border: 3px solid var(--neutral-color-dark);
+    border: 2px solid var(--neutral-color);
+    background-color: var(--secondary-color);
   }
 
   @media (width < 770px) {
     width: 580px;
-  }
-
-  @media (width < 576px) {
-    width: 450px;
   }
 
   @media (width < 576px) {
@@ -55,10 +52,14 @@
   @media (width < 576px) {
     font-size: 45px;
   }
+
+  &.dark {
+    color: var(--primary-color-dark);
+    opacity: 0.15;
+  }
 }
 
 .bgFrameChar {
-  z-index: -1;
   position: absolute;
   top: 0;
   left: 0;
@@ -67,12 +68,21 @@
   font-size: 196px;
   color: var(--primary-color);
   opacity: 0.08;
+
+  &.dark {
+    color: var(--primary-color-dark);
+    opacity: 0.06;
+  }
 }
 
 .descriptionContent {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &.dark {
+    align-items: flex-start;
+  }
 }
 
 .descriptionList {
@@ -88,8 +98,37 @@
   text-align: right;
 }
 
+.studies {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+
+  color: var(--primary-color-dark);
+  font-size: 48px;
+  font-weight: var(--inter-font-black);
+  line-height: 1;
+}
+
+.buttonPadding {
+  padding-top: 1rem;
+}
+
 .reverseProjectDisplay {
+  display: flex;
   flex-direction: row-reverse;
+}
+
+.numberBg {
+  font-size: 56px;
+  font-weight: var(--inter-font-black);
+  transform: translate(3px, -20px);
+
+  color: var(--primary-color);
+
+  @media (width< 576px) {
+    display: none;
+  }
 }
 
 .projectWhiteBg {
@@ -113,6 +152,15 @@
     font-weight: var(--inter-font-black);
     line-height: 1;
   }
+
+  & p {
+    padding-block: 1rem 0;
+    margin: 0;
+  }
+
+  @media (width < 576px) {
+    width: 100%;
+  }
 }
 
 .projectImages {
@@ -128,8 +176,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(0);
 
     border-radius: var(--border-radius-box);
+
+    animation: scaleUp 0.5s ease forwards 1s;
   }
 
   @media (width < 576px) {
@@ -143,7 +194,6 @@
   align-items: center;
 
   width: 100%;
-  height: 100%;
 
   @media (width < 576px) {
     flex-direction: column;
@@ -153,28 +203,70 @@
 }
 
 .projectWhiteShape {
-  border-radius: 24px;
-  background-color: white;
-  padding-bottom: 1rem;
+  border-radius: var(--border-radius-box);
+  background-color: var(--neutral-color);
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding-inline: 2rem;
 
   clip-path: path(
-    'M 0 95 L 0 345 L 300 345 L 300 0 L 62 0 Q 46 0 45 20 Q 45 40 20 40 Q 0 40 0 70 Z'
+    'M 0 95 L 0 1000 L 1000 1000 L 1000 0 L 62 0 Q 46 0 45 20 Q 45 40 20 40 Q 0 40 0 70 Z'
   );
 
   @media (width < 576px) {
-    clip-path: path(
-      'M 0 95 L 0 410 L 300 410 L 300 0 L 90 0 Q 56 0 55 30 Q 55 65 25 70 Q 0 75 0 100 Z'
-    );
+    padding: 0rem;
+    margin: 0;
+    clip-path: none;
   }
 }
 
 .projectsContainer {
   width: 100%;
   height: 100%;
+  margin-bottom: 1rem;
+
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius-box);
+  background-color: var(--primary-color);
+
+  transform: scale(0);
+
+  animation: scaleUp 0.5s ease forwards 0.5s;
+}
+
+.projectsOutlineShape {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  z-index: 1;
+
+  width: calc(100% - 107px);
+  height: calc(100% - 35px);
+
+  border: 1px solid #fff;
+  border-radius: 20px;
+
+  @media (width < 770px) {
+  }
+
+  @media (width < 576px) {
+    display: none;
+  }
+
+  transform: scale(0);
+  animation: scaleUp 0.5s ease forwards 0.2s;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .techStackContainer {
@@ -193,6 +285,7 @@
 }
 
 .techStackNumber {
+  z-index: 2;
   position: absolute;
   top: 0;
   left: 0;
@@ -200,6 +293,10 @@
   font-size: 58px;
   font-weight: var(--inter-font-black);
   color: var(--neutral-color);
+
+  &.dark {
+    color: var(--primary-color-dark);
+  }
 }
 
 .techStackOutlineShape {
@@ -255,14 +352,16 @@
   font-weight: var(--inter-font-black);
   font-size: 32px;
   line-height: 0.9;
-  padding: 1rem;
+  padding-block: 1rem;
 
   > :first-child {
     text-align: start;
+    padding-right: 2rem;
   }
 
   > :last-child {
     text-align: end;
+    color: var(--primary-color);
   }
 }
 

@@ -141,6 +141,14 @@
     color: var(--primary-color-dark);
     font-weight: var(--inter-font-bold);
     border-color: var(--primary-color-dark);
+    border-width: 3px;
+  }
+
+  &.primaryDarkBlack {
+    color: var(--primary-color-dark);
+    font-weight: var(--inter-font-black);
+    border-color: var(--primary-color-dark);
+    border-width: 3px;
   }
 
   &.accent {
@@ -160,7 +168,6 @@
 .startIconAnimation {
   transition: transform 0.5s ease;
 }
-
 
 .smallPaddingLeft {
   padding: 0.5rem 2rem 0.5rem 1.5rem;

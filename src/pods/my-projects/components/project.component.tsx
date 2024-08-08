@@ -18,7 +18,7 @@ export const ProjectComponent: React.FC<Props> = props => {
   } = props;
 
   return (
-    <div className={styles.projectWhiteBg}>
+    <div className={`${styles.projectWhiteBg} ${styles.projectWhiteShape}`}>
       <div
         className={`${styles.contentProject} 
           ${reverse ? styles.reverseProjectDisplay : ''}`}
