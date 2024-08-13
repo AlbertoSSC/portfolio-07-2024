@@ -1,4 +1,8 @@
 .workProjectsContainer {
+  position: relative;
+  justify-content: start;
+  height: 300vh;
+
   @media (width < 576px) {
     width: 350px;
     height: 1350px;
@@ -6,9 +10,9 @@
 }
 
 .projectsMain {
+  display: flex;
   min-height: 550px;
-  flex-direction: column;
-  justify-content: space-around;
+  width: 100%;
 
   @media (width < 576px) {
     justify-content: center;
@@ -39,7 +43,7 @@
 }
 
 .divider {
-  width: 100%;
+  width: 250%;
   position: absolute;
   top: 90px;
 
@@ -49,4 +53,16 @@
   @media (width < 576px) {
     display: none;
   }
+}
+
+.sticky {
+  position: sticky;
+  top: 24px;
+  z-index: 10;
+}
+
+.flex {
+  display: flex;
+  flex: 0 0 auto;
+  width: 100%;
 }

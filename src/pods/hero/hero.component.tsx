@@ -1,5 +1,5 @@
-import styles from './hero.module.css';
 import globalStyles from '@/styles/global-styles.module.css';
+import styles from './hero.module.css';
 
 export const HeroComponent: React.FC = () => {
   return (
@@ -7,7 +7,7 @@ export const HeroComponent: React.FC = () => {
       <section
         className={`${globalStyles.componentContainer} ${styles.heroContainer}`}
       >
-        <div className={`${globalStyles.componentSize} ${styles.hero}`}>
+        <div className={`${styles.hero}`}>
           <section className={styles.heroTitle}>
             <h1>LET'S GROW YOUR SITE</h1>
             <div className={styles.secondaryFont}>

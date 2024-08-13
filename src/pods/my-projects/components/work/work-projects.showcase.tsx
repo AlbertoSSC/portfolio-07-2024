@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { ArrowGoBack } from '@/assets/images/icons/component/backArrow';
-import testImage from '@/assets/images/api.png';
+import learningApp_01 from '@/assets/images/learningApps_01.jpg';
+import learningApp_02 from '@/assets/images/learningApps_02.jpg';
 
 import { Button } from '@/common';
 import { ProjectComponent } from '../project.component';
@@ -12,11 +13,12 @@ import styles from '../project.component.module.css';
 import animation from '../animation.module.css';
 
 export const WorkProjectsShowcase = () => {
-  const project02_Imgs = [testImage, testImage];
+  const project02_Imgs = [learningApp_01, learningApp_02];
 
-  const [showProjects, setShowProjects] = React.useState(true);
+  const [showProjects, setShowProjects] = React.useState(false);
 
   /* --styles-- */
+
   const projectsFrameContainerStyles = `${styles.projectsFrameContainer} ${
     styles.frameWhite
   } ${showProjects ? animation.outlineHeight : ''}`;
@@ -26,11 +28,11 @@ export const WorkProjectsShowcase = () => {
   }`;
 
   const descriptionStyles = `${styles.descriptionContainer} ${
-    showProjects ? (animation.displayNone, animation.animateDescription) : ''
+    showProjects ? animation.animateDescription : ''
   }`;
 
   const techStackStyles = `${styles.techStackContainer} ${
-    showProjects ? animation.displayNone : ''
+    showProjects ? animation.animateTechStack : ''
   }`;
 
   const projectsOutlineShapeStyles = `${styles.projectsOutlineShape} ${
@@ -40,6 +42,8 @@ export const WorkProjectsShowcase = () => {
   const projectsNumberBgStyles = `${styles.numberBg} ${
     animation.projectsNumberBgAnimation
   } ${!showProjects ? animation.displayNone : ''}`;
+
+  /* --styles-- */
 
   return (
     <>
@@ -52,7 +56,7 @@ export const WorkProjectsShowcase = () => {
         </section>
 
         <section className={techStackStyles}>
-          <WorkTechStackComponent />
+          <WorkTechStackComponent showProjects={showProjects} />
         </section>
 
         <div className={styles.reverseProjectDisplay}>
@@ -60,11 +64,14 @@ export const WorkProjectsShowcase = () => {
           <div className={projectsOutlineShapeStyles}></div>
           <section className={projectsContainerStyles}>
             <ProjectComponent
-              title01="ADOPTION"
-              title02="STORE"
-              description={`Simulador web para la adopc de máscotas
-              Simulador web para la adopc de máscotas
-              Simulador web para la adopció de máscotas`}
+              title01="e-Learning"
+              title02="App"
+              description={
+                <>
+                  <p>Aprende idiomas con un enfoque práctico y divertido.</p>
+                  <p>Reconocimiento de voz, drag & drop, tests, ...</p>
+                </>
+              }
               images={project02_Imgs}
             />
           </section>

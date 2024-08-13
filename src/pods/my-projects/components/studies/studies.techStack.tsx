@@ -2,11 +2,23 @@ import { Tag } from '@/common';
 
 import globalStyles from '@/styles/global-styles.module.css';
 import styles from '../project.component.module.css';
+import animation from '../animation.module.css';
 
-export const StudiesTechStackComponent = () => {
+interface Props {
+  showProjects: boolean;
+}
+export const StudiesTechStackComponent: React.FC<Props> = ({
+  showProjects,
+}) => {
   return (
     <div>
-      <span className={`${styles.techStackNumber} ${styles.dark}`}>01</span>
+      <span
+        className={`${styles.techStackNumber} ${styles.dark} ${
+          showProjects ? animation.displayNone : ''
+        }`}
+      >
+        01
+      </span>
       <div className={styles.techStackOutlineShape}></div>
       <div className={styles.techStackBlueBg}>
         <div className={styles.techStackWhiteShape}>
