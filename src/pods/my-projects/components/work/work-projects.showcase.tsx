@@ -5,9 +5,11 @@ import learningApp_01 from '@/assets/images/learningApps_01.jpg';
 import learningApp_02 from '@/assets/images/learningApps_02.jpg';
 
 import { Button } from '@/common';
+import { useLanguageContext } from '@/core/language.context';
 import { ProjectComponent } from '../project.component';
 import { WorkDescriptionComponent } from './work.description';
 import { WorkTechStackComponent } from './work.techStack';
+import { project01Translations } from './components/translations';
 
 import styles from '../project.component.module.css';
 import animation from '../animation.module.css';
@@ -15,6 +17,7 @@ import animation from '../animation.module.css';
 export const WorkProjectsShowcase = () => {
   const project02_Imgs = [learningApp_01, learningApp_02];
 
+  const { languageState } = useLanguageContext();
   const [showProjects, setShowProjects] = React.useState(false);
 
   /* --styles-- */
@@ -64,14 +67,7 @@ export const WorkProjectsShowcase = () => {
           <div className={projectsOutlineShapeStyles}></div>
           <section className={projectsContainerStyles}>
             <ProjectComponent
-              title01="e-Learning"
-              title02="App"
-              description={
-                <>
-                  <p>Aprende idiomas con un enfoque práctico y divertido.</p>
-                  <p>Reconocimiento de voz, drag & drop, tests, ...</p>
-                </>
-              }
+              textContent={project01Translations[languageState]}
               images={project02_Imgs}
             />
           </section>

@@ -3,6 +3,7 @@ import React from 'react';
 import { ArrowGoBack } from '@/assets/images/icons/component/backArrow';
 
 import { Button } from '@/common';
+import { useLanguageContext } from '@/core/language.context';
 import { ProjectComponent } from '../project.component';
 import { StudiesTechStackComponent } from './studies.techStack';
 import { StudiesDescriptionComponent } from './studies.description';
@@ -10,14 +11,22 @@ import { useProjectsImgs } from './components/imgs.hook';
 
 import styles from '../project.component.module.css';
 import animation from '../animation.module.css';
+import {
+  project01Translations,
+  project02Translations,
+  project03Translations,
+} from './components/translations';
 
 export const StudiesProjectsShowcase = () => {
   const { apiProjectImages, invoiceProjectImages, adoptionProjectImages } =
     useProjectsImgs();
 
+  const { languageState } = useLanguageContext();
+
   const [showProjects, setShowProjects] = React.useState(false);
 
-  /* --styles-- */
+  //* --styles-- */
+
   const projectsFrameContainerStyles = `${styles.projectsFrameContainer} 
   ${styles.frameDark} ${animation.studies}
   ${showProjects ? animation.outlineHeight : ''}`;
@@ -42,7 +51,7 @@ export const StudiesProjectsShowcase = () => {
     animation.projectsNumberBgAnimationDark
   } ${!showProjects ? animation.displayNone : ''}`;
 
-  /* --styles-- */
+  /* --styles-- */ //
 
   return (
     <>
@@ -63,42 +72,18 @@ export const StudiesProjectsShowcase = () => {
           <div className={projectsOutlineShapeStyles}></div>
           <section className={projectsContainerStyles}>
             <ProjectComponent
-              title01="Invoice"
-              title02="Manager"
-              description={
-                <>
-                  <p>
-                    Control de estados en la validación de una orden de pedido.
-                  </p>
-                </>
-              }
+              textContent={project01Translations[languageState]}
               images={invoiceProjectImages}
             />
 
             <ProjectComponent
               reverse
-              title01="Adoption"
-              title02="Store"
-              description={
-                <>
-                  <p>
-                    Con el contexto gestionamos estados y la cesta de adopción.
-                  </p>
-                </>
-              }
+              textContent={project02Translations[languageState]}
               images={adoptionProjectImages}
             />
 
             <ProjectComponent
-              title01="API"
-              title02="Explorer"
-              description={
-                <>
-                  <p>
-                    Usamos las APIs de GitHub y R&M para presentar información.
-                  </p>
-                </>
-              }
+              textContent={project03Translations[languageState]}
               images={apiProjectImages}
             />
           </section>

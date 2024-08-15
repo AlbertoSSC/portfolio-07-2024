@@ -25,16 +25,23 @@
   position: relative;
   display: flex;
   justify-content: center;
-  padding-top: 3rem;
+  padding-block: 3rem;
+  height: 150px;
+  width: 100%;
 
   & h4 {
+    margin: 0;
+    position: absolute;
     color: var(--neutral-color);
     font-size: 28px;
     font-weight: 300;
     line-height: 0.5;
     z-index: 1;
     padding-inline: 3rem;
-    background-color: var(--primary-color-dark);
+  }
+
+  & h4:nth-child(2) {
+    opacity: 0;
   }
 
   @media (width < 576px) {
@@ -43,12 +50,24 @@
 }
 
 .divider {
-  width: 250%;
+  width: 22%;
   position: absolute;
-  top: 90px;
+  top: 100px;
 
-  border: 1px solid var(--neutral-color);
-  opacity: 0.8;
+  transform: scale(0);
+  height: 8px;
+
+  background-color: var(--accent-color);
+  border-radius: 4px;
+
+  &.divider2 {
+    border-radius: 4px;
+    width: 21.5%;
+    top: 99.3px;
+    background-color: var(--accent-color);
+    transform: scale(1);
+    height: 1px;
+  }
 
   @media (width < 576px) {
     display: none;

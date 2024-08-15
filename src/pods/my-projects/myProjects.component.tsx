@@ -27,47 +27,73 @@ export const MyProjectsComponent: React.FC = () => {
       AnimationListOptions
     ][] = [
       [
-        '#projects-container',
-        { x: [0, targetValue] },
-        { at: 0.8, easing: 'ease-in-out', duration: 0.4 },
+        '#work',
+        { x: [0, targetValue], opacity: [1, 0] },
+        { at: 0.3, easing: 'ease-in-out', duration: 0.1 },
       ],
       [
-        '#projects-container',
+        '#progress-divider',
+        { scaleX: [0, 1] },
+        { at: 0.15, easing: 'ease-in-out', duration: 0.3 },
+      ],
+    
+      [
+        '#professional-work',
+        { opacity: [1, 0], x: [0, -585] },
+        { at: 0.3, easing: 'ease-in-out', duration: 0.05 },
+      ],
+      [
+        '#in-training',
+        { opacity: [0, 1], x: [585, 0] },
+        { at: 0.3, easing: 'ease-in-out', duration: 0.05 },
+      ],
+      [
+        '#studies',
+        { x: [0, targetValue], opacity: [0, 1] },
+        { at: 0.3, easing: 'ease-in-out', duration: 0.05 },
+      ],
+      [
+        '#work',
         { x: [targetValue, null] },
-        { easing: 'ease-in-out', duration: 0.4 },
+        { easing: 'ease-in-out', duration: 0.2 },
       ],
     ];
 
-    scroll(timeline(sequence, {endDelay: 0.5}));
+    scroll(timeline(sequence, { duration: 1}));
   }, []);
 
   return (
     <article
       className={`${globalStyles.componentContainer} ${styles.workProjectsContainer} ${styles.height}`}
     >
-      <div
-        id="toProgress"
-        className={`${globalStyles.componentContainer} ${styles.sticky}`}
-      >
+      <div className={`${globalStyles.componentContainer} ${styles.sticky}`}>
         <header className={globalStyles.sectionTitleHeader}>
           <h3 className={globalStyles.sectionTitleShape}>PROJECTS</h3>
         </header>
 
+        <div className={styles.projectsDivider}>
+          <h4 id="professional-work" className={globalStyles.skewItalic}>
+            Professional work
+          </h4>
+          <h4 id="in-training" className={globalStyles.skewItalic}>
+            In trainig
+          </h4>
+          <div id="progress-divider" className={styles.divider}></div>
+          <div className={`${styles.divider} ${styles.divider2}`}></div>
+        </div>
         <main className={`${styles.projectsMain}`}>
-          <div id="projects-container" className={styles.flex}>
-            <section className={`${globalStyles.centerContent} ${styles.flex}`}>
-              <div className={styles.projectsDivider}>
-                <h4 className={globalStyles.skewItalic}>Professional work</h4>
-                <div className={styles.divider}></div>
-              </div>
+          <div className={`${styles.flex}`}>
+            <section
+              id="work"
+              className={`${globalStyles.centerContent} ${styles.flex}`}
+            >
               <WorkProjectsShowcase />
             </section>
 
-            <section className={`${globalStyles.centerContent} ${styles.flex}`}>
-              <div className={styles.projectsDivider}>
-                <h4 className={globalStyles.skewItalic}>In trainig</h4>
-                <div className={styles.divider}></div>
-              </div>
+            <section
+              id="studies"
+              className={`${globalStyles.centerContent} ${styles.flex}`}
+            >
               <StudiesProjectsShowcase />
             </section>
           </div>

@@ -71,10 +71,10 @@ export const ContactComponent: React.FC = () => {
           </section>
 
           <section className={styles.contactDescription}>
+            <p>I'm open to new opportunities and projects. </p>
             <p>
-              I'm open to new opportunities and projects. <br /> If you have
-              something in mind and want to work together, don't hesitate,
-              contact me!
+              If you have something in mind and want to work together, don't
+              hesitate, contact me!
             </p>
           </section>
         </div>

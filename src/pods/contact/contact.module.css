@@ -1,17 +1,10 @@
 .contactContainer {
   justify-content: flex-start;
   padding-block: 4rem;
-  width: 98dvw;
-  height: 700px;
+  width: 100dvw;
+  height: 100vh;
 
   background-color: white;
-
-  @media (width < 770px) {
-    height: 600px;
-  }
-  @media (width < 576px) {
-    height: 540px;
-  }
 }
 
 .contactStyle {
@@ -34,16 +27,20 @@
   line-height: 1;
   text-align: end;
   margin: 0;
-  padding-block: 3rem;
-
+  padding-block: 4rem;
+  letter-spacing: 1.2px;
   max-width: 750px;
 
   @media (width < 770px) {
-    padding-block: 2rem;
+    padding-block: 4rem;
     font-size: 56px;
+    line-height: 1.2;
+    max-width: 480px;
   }
+
   @media (width < 576px) {
     font-size: 28px;
+    letter-spacing: 1px;
   }
 }
 
@@ -72,7 +69,7 @@
     }
     @media (width < 770px) {
       font-size: 32px;
-      padding-bottom: 0.3rem;
+      padding-bottom: 0.8rem;
     }
 
     @media (width < 576px) {
@@ -80,7 +77,7 @@
     }
 
     @media (width < 576px) {
-      letter-spacing: 0;
+      letter-spacing: 0.09rem;
       font-size: 18px;
       padding-bottom: 0.5rem;
     }
@@ -96,6 +93,7 @@
     }
 
     @media (width < 576px) {
+      padding-left: 1rem;
       transform: translateY(8px);
       height: 24px;
     }
@@ -108,21 +106,27 @@
 
 .contactDescription {
   color: var(--primary-color-dark);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: var(--inter-font-medium);
   text-align: end;
 
-  max-width: 750px;
-  padding-top: 2rem;
-  padding-block: 0 0;
+  max-width: 770px;
+
+  padding-block: 3rem;
 
   @media (width < 770px) {
+    font-size: 24px;
+    line-height: 1.6;
+
     max-width: 550px;
-    padding-top: 1rem;
+    padding-block: 2rem;
   }
   @media (width < 576px) {
-    padding-top: 0.4rem;
-    font-size: 16px;
+    font-size: 22px;
+    line-height: 1.7;
+
+    max-width: 300px;
+    padding-block: 1rem;
   }
 }
 
