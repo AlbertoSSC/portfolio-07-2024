@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { WorkProjectsShowcase } from './components';
 import { StudiesProjectsShowcase } from './components/studies/studies-projects.showcase';
 import {
@@ -10,7 +12,6 @@ import {
 
 import globalStyles from '@/styles/global-styles.module.css';
 import styles from './projects.module.css';
-import React from 'react';
 
 export const MyProjectsComponent: React.FC = () => {
   React.useEffect(() => {
@@ -36,7 +37,7 @@ export const MyProjectsComponent: React.FC = () => {
         { scaleX: [0, 1] },
         { at: 0.15, easing: 'ease-in-out', duration: 0.3 },
       ],
-    
+
       [
         '#professional-work',
         { opacity: [1, 0], x: [0, -585] },
@@ -59,7 +60,7 @@ export const MyProjectsComponent: React.FC = () => {
       ],
     ];
 
-    scroll(timeline(sequence, { duration: 1}));
+    scroll(timeline(sequence, { duration: 1 }));
   }, []);
 
   return (
@@ -72,10 +73,10 @@ export const MyProjectsComponent: React.FC = () => {
         </header>
 
         <div className={styles.projectsDivider}>
-          <h4 id="professional-work" className={globalStyles.skewItalic}>
+          <h4 id="professional-work" className={`${globalStyles.skewItalic}`}>
             Professional work
           </h4>
-          <h4 id="in-training" className={globalStyles.skewItalic}>
+          <h4 id="in-training" className={`${globalStyles.skewItalic}`}>
             In trainig
           </h4>
           <div id="progress-divider" className={styles.divider}></div>
@@ -92,7 +93,7 @@ export const MyProjectsComponent: React.FC = () => {
 
             <section
               id="studies"
-              className={`${globalStyles.centerContent} ${styles.flex}`}
+              className={`${globalStyles.centerContent} ${styles.flex} ${styles.studies}`}
             >
               <StudiesProjectsShowcase />
             </section>

@@ -1,13 +1,13 @@
 .outlineHeight {
-  height: 228px;
+  height: 450px;
   transition: all 0.5s ease;
 
   @media (width <770px) {
-    height: 277px;
+    height: 490px;
   }
 
   &.studies {
-    height: 545px;
+    height: 563px;
 
     @media (width < 770px) {
       height: fit-content;

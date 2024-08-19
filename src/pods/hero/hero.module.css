@@ -1,15 +1,18 @@
 .heroContainer {
-  height: min(100dvh, 920px);
+  height: min(100dvh, 780px);
+  margin-block: 0rem 6rem;
 
   @media (height < 770px) {
     height: 600px;
   }
 
   @media (width < 770px) {
-    max-width: 600px;
+    height: 900px;
+    max-width: 400px;
   }
 
   @media (width < 576px) {
+    height: 750px;
     max-width: 450px;
   }
 }

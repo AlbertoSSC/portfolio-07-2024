@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { copyToClipboard } from '@/common/components/copy-to-clipBoard';
+
 import CopyIcon from '../../assets/images/icons/copy-icon.svg';
 import ErathGlobeIcon from '../../assets/images/icons/internet-icon.svg';
 
@@ -8,19 +10,6 @@ import styles from './contact.module.css';
 
 export const ContactComponent: React.FC = () => {
   const [showPopover, setShowPopover] = React.useState(false);
-
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text.toLowerCase()).then(
-      () => {
-        console.log('Text copied to clipboard');
-        setShowPopover(true);
-        setTimeout(() => setShowPopover(false), 2000);
-      },
-      err => {
-        console.error('Could not copy text: ', err);
-      }
-    );
-  };
 
   return (
     <section
@@ -44,7 +33,7 @@ export const ContactComponent: React.FC = () => {
               href="#"
               onClick={e => {
                 e.preventDefault();
-                copyToClipboard('ALBERTOSSC@GMAIL.COM');
+                copyToClipboard('ALBERTOSSC@GMAIL.COM', setShowPopover);
               }}
             >
               ALBERTOSSC@GMAIL.COM
@@ -67,7 +56,7 @@ export const ContactComponent: React.FC = () => {
               />
             </a>
 
-            {showPopover && <div className={styles.popover}>EMAIL COPIED!</div>}
+            {showPopover && <div className={globalStyles.popover}>EMAIL COPIED!</div>}
           </section>
 
           <section className={styles.contactDescription}>

@@ -26,6 +26,7 @@
 
   @media (width < 576px) {
     width: 290px;
+    height: fit-content;
     flex-direction: column;
     max-width: max-content;
   }
@@ -50,7 +51,7 @@
   opacity: 0.5;
 
   @media (width < 576px) {
-    font-size: 45px;
+    font-size: 32px;
   }
 
   &.dark {
@@ -108,6 +109,11 @@
   font-size: 48px;
   font-weight: var(--inter-font-black);
   line-height: 1;
+
+  @media (width < 576px) {
+    font-size: 32px;
+    line-height: 1;
+  }
 }
 
 .buttonPadding {
@@ -143,6 +149,13 @@
   border: 3px solid var(--primary-color);
   border-radius: calc(3px + var(--border-radius-box));
   background-color: var(--primary-color);
+
+  transition: all 0.3s ease;
+
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.02);
+  }
 }
 
 .projectWhiteBg {
@@ -172,7 +185,7 @@
     line-height: 1.3;
 
     &:last-child {
-      margin-bottom: 0;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -181,8 +194,13 @@
   }
 }
 
+.noImages {
+  width: 94%;
+  padding-right: 0.5rem;
+}
+
 .projectImages {
-  width: 50%;
+  width: 80%;
   height: 100%;
   padding: 1rem;
 
@@ -211,10 +229,6 @@
   }
 }
 
-.biggerThanTwo {
-  width: 80%;
-}
-
 .contentProject {
   display: flex;
   align-items: center;
@@ -231,7 +245,6 @@
 .projectWhiteShape {
   border-radius: var(--border-radius-box);
   background-color: var(--neutral-color);
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -264,11 +277,17 @@
   animation: scaleUp 0.5s ease forwards 0.5s;
 }
 
+.noLink {
+  pointer-events: none;
+  cursor: default;
+}
+
 .projectsOutlineShape {
   position: absolute;
   top: 25px;
   left: 25px;
   z-index: 1;
+  pointer-events: none;
 
   width: calc(100% - 130px);
   height: calc(100% - 32px);

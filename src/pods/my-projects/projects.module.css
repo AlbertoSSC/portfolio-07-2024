@@ -2,10 +2,12 @@
   position: relative;
   justify-content: start;
   height: 300vh;
+  padding-block: 0rem 6rem;
 
   @media (width < 576px) {
     width: 350px;
-    height: 1350px;
+    height: fit-content;
+    padding-block: 0rem 1rem;
   }
 }
 
@@ -16,8 +18,7 @@
 
   @media (width < 576px) {
     justify-content: center;
-    min-height: 900px;
-    padding-bottom: 3rem;
+    padding-block: 4rem;
   }
 }
 
@@ -45,7 +46,7 @@
   }
 
   @media (width < 576px) {
-    padding-bottom: 2rem;
+    display: none;
   }
 }
 
@@ -78,10 +79,26 @@
   position: sticky;
   top: 24px;
   z-index: 10;
+
+  @media (width < 576px) {
+    position: relative;
+    height: fit-content;
+  }
 }
 
 .flex {
   display: flex;
   flex: 0 0 auto;
   width: 100%;
+
+  @media (width < 576px) {
+    flex-direction: column;
+    min-height: 920px;
+  }
+}
+
+.studies {
+  @media (max-width: 576px) {
+    min-height: 700px;
+  }
 }

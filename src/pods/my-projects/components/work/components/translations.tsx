@@ -20,3 +20,31 @@ export const project01Translations = {
     ),
   },
 };
+
+export const project02Translations = {
+  en: {
+    title01: 'Freelance',
+    title02: 'Projects',
+    description: (
+      <>
+        <p>
+          We are working on new projects, we will share them with you soon.{' '}
+        </p>
+        <p>Don’t miss out!</p>
+      </>
+    ),
+  },
+  es: {
+    title01: 'Proyectos',
+    title02: 'como Freelance',
+    description: (
+      <>
+        <p>
+          Estamos trabajando en nuevos proyectos, pronto los compartiremos
+          contigo.{' '}
+        </p>
+        <p>¡No te los pierdas!</p>
+      </>
+    ),
+  },
+};

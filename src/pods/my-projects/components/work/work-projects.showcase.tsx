@@ -1,23 +1,25 @@
 import React from 'react';
 
 import { ArrowGoBack } from '@/assets/images/icons/component/backArrow';
-import learningApp_01 from '@/assets/images/learningApps_01.jpg';
-import learningApp_02 from '@/assets/images/learningApps_02.jpg';
 
 import { Button } from '@/common';
 import { useLanguageContext } from '@/core/language.context';
+import { useWorkProjectsImgs } from './components/imgs.hook';
 import { ProjectComponent } from '../project.component';
 import { WorkDescriptionComponent } from './work.description';
 import { WorkTechStackComponent } from './work.techStack';
-import { project01Translations } from './components/translations';
+import {
+  project01Translations,
+  project02Translations,
+} from './components/translations';
 
 import styles from '../project.component.module.css';
 import animation from '../animation.module.css';
 
 export const WorkProjectsShowcase = () => {
-  const project02_Imgs = [learningApp_01, learningApp_02];
-
   const { languageState } = useLanguageContext();
+  const { learningAppProjectImages } = useWorkProjectsImgs();
+
   const [showProjects, setShowProjects] = React.useState(false);
 
   /* --styles-- */
@@ -26,16 +28,16 @@ export const WorkProjectsShowcase = () => {
     styles.frameWhite
   } ${showProjects ? animation.outlineHeight : ''}`;
 
-  const projectsContainerStyles = `${styles.projectsContainer} ${
-    !showProjects ? animation.displayNone : ''
-  }`;
-
   const descriptionStyles = `${styles.descriptionContainer} ${
     showProjects ? animation.animateDescription : ''
   }`;
 
   const techStackStyles = `${styles.techStackContainer} ${
     showProjects ? animation.animateTechStack : ''
+  }`;
+
+  const projectsContainerStyles = `${styles.projectsContainer}  ${
+    !showProjects ? animation.displayNone : ''
   }`;
 
   const projectsOutlineShapeStyles = `${styles.projectsOutlineShape} ${
@@ -68,7 +70,13 @@ export const WorkProjectsShowcase = () => {
           <section className={projectsContainerStyles}>
             <ProjectComponent
               textContent={project01Translations[languageState]}
-              images={project02_Imgs}
+              images={learningAppProjectImages}
+              link="https://e-learning-apps.vercel.app/"
+            />
+            <ProjectComponent
+              reverse
+              textContent={project02Translations[languageState]}
+              
             />
           </section>
         </div>

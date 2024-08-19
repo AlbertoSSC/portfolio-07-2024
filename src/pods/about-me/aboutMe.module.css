@@ -1,11 +1,8 @@
 .aboutMeContainer {
-  height: min(100dvh, 920px);
+  height: min(100dvh, 770px);
 
-  @media (width < 360px) {
-    height: 1100px;
-  }
-  @media (height < 770px) {
-    height: 900px;
+  @media (width < 576px) {
+    height: fit-content;
   }
 }
 
@@ -31,9 +28,5 @@
 
   @media (width < 576px) {
     max-width: 500px;
-  }
-
-  @media (width < 576px) {
-    height: 1200px;
   }
 }

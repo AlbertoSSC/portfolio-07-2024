@@ -129,33 +129,3 @@
     padding-block: 1rem;
   }
 }
-
-.popover {
-  position: absolute;
-  bottom: 100%;
-
-  color: var(--primary-color-dark);
-  font-size: 16px;
-  font-weight: var(--inter-font-bold);
-  background-color: var(--accent-color);
-  padding: 0.5rem 2rem;
-
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-
-  animation: fadeIn 0.3s forwards, fadeOut 0.5s forwards 1.5s;
-}
-
-@keyframes fadeIn {
-  to {
-    transform: translateY(-3px);
-    opacity: 1;
-  }
-}
-@keyframes fadeOut {
-  to {
-    transform: translateY(6px);
-    opacity: 0;
-  }
-}

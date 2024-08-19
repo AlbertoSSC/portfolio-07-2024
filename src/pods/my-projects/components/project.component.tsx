@@ -9,7 +9,8 @@ interface Content {
 interface Props {
   textContent: Content;
   reverse?: boolean;
-  images: string[];
+  images?: string[];
+  link?: string;
 }
 
 export const ProjectComponent: React.FC<Props> = props => {
@@ -21,49 +22,59 @@ export const ProjectComponent: React.FC<Props> = props => {
     },
     images,
     reverse,
+    link,
   } = props;
 
+  const projectDescriptionStyles = `${styles.projectDescription} ${
+    !images ? styles.noImages : ''
+  }`;
+
   return (
-    <div className={`${styles.projectBlueBg}`}>
-      <div
-        className={`${styles.projectWhiteBg} ${styles.projectWhiteShape} ${
-          reverse ? styles.flipHorizontal : ''
-        }`}
-      >
+    <a
+      className={`${styles.projectsContainer} ${!link ? styles.noLink : ''}`}
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div className={`${styles.projectBlueBg}`}>
         <div
-          className={`${styles.contentProject} 
+          className={`${styles.projectWhiteBg} ${styles.projectWhiteShape} ${
+            reverse ? styles.flipHorizontal : ''
+          }`}
+        >
+          <div
+            className={`${styles.contentProject} 
           ${
             reverse
               ? `${styles.reverseProjectDisplay} ${styles.flipHorizontal}`
               : ''
           }`}
-        >
-          <section className={styles.projectDescription}>
-            <div>
-              <h4 style={{ color: '#263440' }}>{textContent.title01}</h4>
-              <h4 style={{ color: '#506e86' }}>{textContent.title02}</h4>
-            </div>
+          >
+            <section className={projectDescriptionStyles}>
+              <div>
+                <h4 style={{ color: '#263440' }}>{textContent.title01}</h4>
+                <h4 style={{ color: '#506e86' }}>{textContent.title02}</h4>
+              </div>
 
-            <p style={{ color: 'black' }}>{textContent.description}</p>
-          </section>
+              <p style={{ color: 'black' }}>{textContent.description}</p>
+            </section>
 
-          {images.length <= 2 ? (
-            <section className={styles.projectImages}>
-              {images!.map((image, index) => {
-                return <img key={`image ${index}`} src={image} alt="work-01" />;
-              })}
-            </section>
-          ) : (
-            <section
-              className={`${styles.projectImages} ${styles.biggerThanTwo}`}
-            >
-              {images!.map((image, index) => {
-                return <img key={`image ${index}`} src={image} alt="work-01" />;
-              })}
-            </section>
-          )}
+            {images && (
+              <section className={`${styles.projectImages}`}>
+                {images!.map((image, index) => {
+                  return (
+                    <img
+                      key={`image ${index}`}
+                      src={image}
+                      alt={`project image ${index}`}
+                    />
+                  );
+                })}
+              </section>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 };

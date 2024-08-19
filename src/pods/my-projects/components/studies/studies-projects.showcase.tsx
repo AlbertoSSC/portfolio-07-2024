@@ -7,7 +7,7 @@ import { useLanguageContext } from '@/core/language.context';
 import { ProjectComponent } from '../project.component';
 import { StudiesTechStackComponent } from './studies.techStack';
 import { StudiesDescriptionComponent } from './studies.description';
-import { useProjectsImgs } from './components/imgs.hook';
+import { useStudiesProjectsImgs } from './components/imgs.hook';
 
 import styles from '../project.component.module.css';
 import animation from '../animation.module.css';
@@ -19,7 +19,7 @@ import {
 
 export const StudiesProjectsShowcase = () => {
   const { apiProjectImages, invoiceProjectImages, adoptionProjectImages } =
-    useProjectsImgs();
+    useStudiesProjectsImgs();
 
   const { languageState } = useLanguageContext();
 
@@ -74,17 +74,20 @@ export const StudiesProjectsShowcase = () => {
             <ProjectComponent
               textContent={project01Translations[languageState]}
               images={invoiceProjectImages}
+              link="https://invoice-manager-eight.vercel.app/"
             />
 
             <ProjectComponent
               reverse
               textContent={project02Translations[languageState]}
               images={adoptionProjectImages}
+              link="https://adoption-store.vercel.app/"
             />
 
             <ProjectComponent
               textContent={project03Translations[languageState]}
               images={apiProjectImages}
+              link="https://api-lists.vercel.app/"
             />
           </section>
         </div>
