@@ -76,7 +76,7 @@
   }
 
   & a:nth-child(2) {
-    svg {
+    & svg {
       height: 1.25rem;
     }
   }
@@ -172,7 +172,6 @@
   align-items: center;
   justify-content: center;
 
-  
   width: min(100%, 1200px);
 
   @media (width < 576px) {
@@ -237,6 +236,7 @@
   align-items: center;
   width: max-content;
   padding: 0.8rem 2rem;
+  cursor: pointer;
 
   background-color: transparent;
 
@@ -251,7 +251,7 @@
   &:hover {
     transform: translate(0px, -3px);
     outline-offset: 8px;
-    outline: 1px solid var(--primary-color);
+    outline: 1px solid;
 
     .endIconAnimation {
       transform: scale(1.1) rotate(45deg) translate(5px, -8px);
@@ -280,7 +280,6 @@
     border-width: 3px;
     padding-inline: 1.5rem 1.2rem;
     line-height: 0;
-    
   }
 
   &.accent {

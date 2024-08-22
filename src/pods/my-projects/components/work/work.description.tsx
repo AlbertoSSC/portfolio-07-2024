@@ -1,6 +1,7 @@
 import { ArrowUp } from '@/assets/images/icons/component/arrow';
 
 import { Button } from '@/common';
+import { useLanguageContext } from '@/core/language.context';
 
 import globalStyles from '@/styles/global-styles.module.css';
 import styles from '../project.component.module.css';
@@ -13,14 +14,20 @@ interface Props {
 export const WorkDescriptionComponent: React.FC<Props> = props => {
   const { showProjects, setShowProjects } = props;
 
+  const { languageState } = useLanguageContext();
+
   return (
     <>
-      <span className={styles.bgFrameTitle}>02-WORK</span>
-      <span className={styles.bgFrameChar}>W</span>
+      <span className={styles.bgFrameTitle}>
+        02-{languageState === 'en' ? 'WORK' : 'TRABAJO'}
+      </span>
+      <span className={styles.bgFrameChar}>
+        {languageState === 'en' ? 'W' : 'T'}
+      </span>
 
       <div className={styles.descriptionContent}>
         <Button
-          label="CHECK IT OUT"
+          label={languageState === 'en' ? 'CHECK IT OUT' : 'VER PROYECTOS'}
           endIconAnimation
           endIcon={<ArrowUp color="#00ffff" height="32" rotate={45} />}
           color="accent"

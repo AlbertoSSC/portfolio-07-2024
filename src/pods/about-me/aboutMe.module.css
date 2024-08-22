@@ -7,23 +7,28 @@
 }
 
 .aboutMe {
-  max-width: 650px;
+  width: min(100%, 650px);
 
   & p {
     font-size: 21px;
 
     & span {
-      padding-inline: 0.2rem;
-      font-family: 'NorthblueRegular';
+      padding-inline: 0.2rem 0.1rem;
+      font-family: var(--secondary-font);
       color: var(--secondary-color);
       line-height: 1;
-      font-size: 32px;
-
-      &:last-child {
-        font-size: 36px;
-        padding-right: 0.8rem;
-      }
+      font-size: 36px;
+      letter-spacing: 2px;
+      word-spacing: -5px;
     }
+  }
+
+  .firstChildSpan {
+    font-size: 32px;
+  }
+  .secondChildSpan {
+    font-size: 36px;
+    padding-right: 0.5rem;
   }
 
   @media (width < 576px) {

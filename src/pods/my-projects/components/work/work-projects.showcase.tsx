@@ -76,7 +76,6 @@ export const WorkProjectsShowcase = () => {
             <ProjectComponent
               reverse
               textContent={project02Translations[languageState]}
-              
             />
           </section>
         </div>
@@ -89,7 +88,7 @@ export const WorkProjectsShowcase = () => {
       >
         <Button
           color="white"
-          label="BACK"
+          label={languageState === 'en' ? 'BACK' : 'VOLVER'}
           onClick={() => {
             setShowProjects(!showProjects);
           }}

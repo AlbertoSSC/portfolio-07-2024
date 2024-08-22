@@ -1,7 +1,9 @@
 import React from 'react';
 
+import { useLanguageContext } from '@/core/language.context';
 import { WorkProjectsShowcase } from './components';
 import { StudiesProjectsShowcase } from './components/studies/studies-projects.showcase';
+
 import {
   AnimationListOptions,
   ElementOrSelector,
@@ -14,6 +16,8 @@ import globalStyles from '@/styles/global-styles.module.css';
 import styles from './projects.module.css';
 
 export const MyProjectsComponent: React.FC = () => {
+  const { languageState } = useLanguageContext();
+
   React.useEffect(() => {
     const screenWidth = window.innerWidth;
     const targetValue = screenWidth < 1200 ? -screenWidth : -1200;
@@ -35,7 +39,7 @@ export const MyProjectsComponent: React.FC = () => {
       [
         '#progress-divider',
         { scaleX: [0, 1] },
-        { at: 0.15, easing: 'ease-in-out', duration: 0.3 },
+        { at: 0.15, easing: 'ease-in-out', duration: 0.35 },
       ],
 
       [
@@ -69,15 +73,19 @@ export const MyProjectsComponent: React.FC = () => {
     >
       <div className={`${globalStyles.componentContainer} ${styles.sticky}`}>
         <header className={globalStyles.sectionTitleHeader}>
-          <h3 className={globalStyles.sectionTitleShape}>PROJECTS</h3>
+          <h3 className={globalStyles.sectionTitleShape}>
+            {languageState === 'en' ? 'PROJECTS' : 'PROYECTOS'}
+          </h3>
         </header>
 
         <div className={styles.projectsDivider}>
           <h4 id="professional-work" className={`${globalStyles.skewItalic}`}>
-            Professional work
+            {languageState === 'en'
+              ? 'Professional work'
+              : 'Experiencia laboral'}
           </h4>
           <h4 id="in-training" className={`${globalStyles.skewItalic}`}>
-            In trainig
+            {languageState === 'en' ? 'In trainig' : 'En formación'}
           </h4>
           <div id="progress-divider" className={styles.divider}></div>
           <div className={`${styles.divider} ${styles.divider2}`}></div>

@@ -16,7 +16,7 @@ export const LanguageProvider: React.FC<Props> = props => {
   const { children } = props;
 
   const [languageState, setLanguageState] =
-    React.useState<ContextModel['languageState']>('en');
+    React.useState<ContextModel['languageState']>('es');
 
   return (
     <LanguageContext.Provider value={{ languageState, setLanguageState }}>

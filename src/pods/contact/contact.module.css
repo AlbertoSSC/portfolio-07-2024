@@ -41,6 +41,7 @@
   @media (width < 576px) {
     font-size: 28px;
     letter-spacing: 1px;
+    max-width: 280px;
   }
 }
 

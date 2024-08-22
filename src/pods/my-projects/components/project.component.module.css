@@ -42,6 +42,9 @@
   padding-left: 1rem;
   height: 100%;
   transition: all 0.5s ease;
+
+  @media (width < 576px) {
+  }
 }
 
 .bgFrameTitle {
@@ -84,11 +87,20 @@
   &.dark {
     align-items: flex-start;
   }
+
+  @media (width < 576px) {
+    transform: translate(-20px, 20px);
+  }
 }
 
 .descriptionList {
   padding-right: 1rem;
   padding-bottom: 1rem;
+
+  @media (width < 576px) {
+    padding-right: 0rem;
+    padding-block: 0.5rem;
+  }
 }
 
 .descriptionText {
@@ -113,11 +125,12 @@
   @media (width < 576px) {
     font-size: 32px;
     line-height: 1;
+    padding-block: 2rem 1.5rem;
   }
 }
 
 .buttonPadding {
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 .reverseProjectDisplay {
@@ -320,14 +333,15 @@
   top: 0;
   right: 0;
 
-  transform: translate(20%, 22%) scale(1);
+  transform: translate(20%, 38%) scale(1);
   transition: all 0.5s ease;
 
   @media (width < 770px) {
-    transform: translate(10%, 15%);
+    transform: translate(10%, 35%);
   }
 
   @media (width < 576px) {
+    transform: translate(15%, 10%);
     position: relative;
   }
 }

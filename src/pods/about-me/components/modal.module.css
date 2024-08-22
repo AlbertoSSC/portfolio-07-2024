@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 12;
 }
 
 .modal {
@@ -21,7 +21,9 @@
   border-radius: var(--border-radius-box);
 
   padding: 2rem;
-  width: min(100%, 600px);
+  width: min(90%, 1200px);
+  max-height: 90dvh;
+  overflow: auto;
 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 
@@ -57,4 +59,37 @@
 
 .content {
   margin-top: 1.5rem;
+
+  & h3 {
+    padding-block: 1rem 0rem;
+    margin: 0;
+  }
+}
+
+.closingQuote {
+  padding-block: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.secondaryText {
+  word-spacing: -3px;
+  padding-inline: 0.8rem;
+  color: var(--secondary-color);
+  font-family: var(--secondary-font);
+  font-size: 24px;
+  line-height: 0.8;
+
+  @media (width < 576px) {
+    line-height: 1.1;
+  }
+}
+
+.closeButtonContainer {
+  display: flex;
+  justify-content: center;
+  padding-block: 2rem 1rem;
 }

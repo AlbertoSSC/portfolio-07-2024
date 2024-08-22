@@ -9,13 +9,14 @@ import { StudiesTechStackComponent } from './studies.techStack';
 import { StudiesDescriptionComponent } from './studies.description';
 import { useStudiesProjectsImgs } from './components/imgs.hook';
 
-import styles from '../project.component.module.css';
-import animation from '../animation.module.css';
 import {
   project01Translations,
   project02Translations,
   project03Translations,
 } from './components/translations';
+
+import styles from '../project.component.module.css';
+import animation from '../animation.module.css';
 
 export const StudiesProjectsShowcase = () => {
   const { apiProjectImages, invoiceProjectImages, adoptionProjectImages } =
@@ -100,7 +101,7 @@ export const StudiesProjectsShowcase = () => {
       >
         <Button
           color="white"
-          label="BACK"
+          label={languageState === 'en' ? 'BACK' : 'VOLVER'}
           onClick={() => {
             setShowProjects(!showProjects);
           }}

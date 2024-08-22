@@ -51,7 +51,7 @@
 }
 
 .divider {
-  width: 22%;
+  width: 32%;
   position: absolute;
   top: 100px;
 
@@ -63,7 +63,7 @@
 
   &.divider2 {
     border-radius: 4px;
-    width: 21.5%;
+    width: 31.5%;
     top: 99.3px;
     background-color: var(--accent-color);
     transform: scale(1);

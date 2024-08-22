@@ -62,7 +62,8 @@ export const HeaderComponent: React.FC = () => {
           [
           <LinkedInIcon color="" />,
           <GithubIcon color="" />,
-          <MailIcon color="" />,<span onClick={handleDownloadCV}>CV</span>]
+          <MailIcon languageSelected={languageState} color="" />,
+          <span onClick={handleDownloadCV}>CV</span>]
         </div>
       </div>
       <div className={globalStyles.languageSelector}>
@@ -100,7 +101,7 @@ export const HeaderComponent: React.FC = () => {
           <div
             className={`${globalStyles.popover} ${globalStyles.languagePopover}`}
           >
-            Spanish selected
+            Español seleccionado
           </div>
         )}
       </div>

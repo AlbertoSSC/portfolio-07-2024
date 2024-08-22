@@ -7,9 +7,10 @@ import globalStyles from '@/styles/global-styles.module.css';
 
 interface Props extends SVGProps<SVGSVGElement> {
   color: string;
+  languageSelected: 'en' | 'es';
 }
 
-export function MailIcon({ color, ...props }: Props) {
+export function MailIcon({ color, languageSelected, ...props }: Props) {
   const [showPopover, setShowPopover] = React.useState(false);
 
   return (
@@ -45,7 +46,7 @@ export function MailIcon({ color, ...props }: Props) {
           id="copyHeaderMail"
           className={`${globalStyles.popover} ${globalStyles.copyHeaderMail}`}
         >
-          EMAIL COPIED!
+          {languageSelected === 'en' ? 'EMAIL COPIED!' : '¡CORREO COPIADO!'}
         </div>
       )}
     </a>
