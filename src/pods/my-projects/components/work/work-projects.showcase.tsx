@@ -72,6 +72,7 @@ export const WorkProjectsShowcase = () => {
               textContent={project01Translations[languageState]}
               images={learningAppProjectImages}
               link="https://e-learning-apps.vercel.app/"
+              languageState={languageState}
             />
             <ProjectComponent
               reverse
