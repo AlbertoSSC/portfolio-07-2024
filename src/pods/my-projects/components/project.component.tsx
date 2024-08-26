@@ -61,7 +61,7 @@ export const ProjectComponent: React.FC<Props> = props => {
               <h4 style={{ color: '#506e86' }}>{textContent.title02}</h4>
             </div>
 
-            <p style={{ color: 'black' }}>{textContent.description}</p>
+            <span style={{ color: 'black' }}>{textContent.description}</span>
           </section>
 
           {images && (

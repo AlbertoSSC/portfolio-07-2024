@@ -14,6 +14,7 @@ import {
 
 import globalStyles from '@/styles/global-styles.module.css';
 import styles from './projects.module.css';
+import { SectionTagTitle } from '@/common/components/section-Tag-Title';
 
 export const MyProjectsComponent: React.FC = () => {
   const { languageState } = useLanguageContext();
@@ -72,11 +73,11 @@ export const MyProjectsComponent: React.FC = () => {
       className={`${globalStyles.componentContainer} ${styles.workProjectsContainer} ${styles.height}`}
     >
       <div className={`${globalStyles.componentContainer} ${styles.sticky}`}>
-        <header className={globalStyles.sectionTitleHeader}>
-          <h3 className={globalStyles.sectionTitleShape}>
-            {languageState === 'en' ? 'PROJECTS' : 'PROYECTOS'}
-          </h3>
-        </header>
+        <SectionTagTitle
+          languageSelected={languageState}
+          labelEn="PROJECTS"
+          labelEs="PROYECTOS"
+        />
 
         <div className={styles.projectsDivider}>
           <h4 id="professional-work" className={`${globalStyles.skewItalic}`}>

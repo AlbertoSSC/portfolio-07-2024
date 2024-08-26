@@ -7,12 +7,6 @@
   background-color: white;
 }
 
-.contactStyle {
-  display: flex;
-  justify-content: end;
-  width: min(90dvw, 1200px);
-}
-
 .contactContent {
   display: flex;
   flex-direction: column;

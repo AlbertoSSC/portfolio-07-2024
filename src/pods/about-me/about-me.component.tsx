@@ -4,20 +4,17 @@ import Modal from './components/modal';
 import { Button } from '@/common';
 import { useLanguageContext } from '@/core/language.context';
 import { AboutTags } from './components/about-tags';
-import {
-  AboutMeTranslations,
-  CallToActionAboutMeTranslations,
-  resumeAboutMeTranslations,
-} from './components/translations';
+import { useAboutMeTranslations } from './components/translations.hook';
 
 import { ArrowUp } from '@/assets/images/icons/component/arrow';
 
 import globalStyles from '@/styles/global-styles.module.css';
 import styles from './aboutMe.module.css';
-import modalStyles from './components/modal.module.css';
+import { SectionTagTitle } from '@/common/components/section-Tag-Title';
 
 export const AboutMeComponent: React.FC = () => {
   const { languageState } = useLanguageContext();
+  const { resume } = useAboutMeTranslations();
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -27,20 +24,18 @@ export const AboutMeComponent: React.FC = () => {
     <section
       className={`${globalStyles.componentContainer} ${styles.aboutMeContainer}`}
     >
-      <header className={globalStyles.sectionTitleHeader}>
-        <h3 className={globalStyles.sectionTitleShape}>
-          {languageState === 'en' ? 'ABOUT ME' : 'SOBRE MÍ'}
-        </h3>
-      </header>
+      <SectionTagTitle
+        languageSelected={languageState}
+        labelEn="ABOUT ME"
+        labelEs="SOBRE MÍ"
+      />
 
       <main
         className={`${globalStyles.componentSize}
           ${globalStyles.centerContent}
           ${styles.aboutMe}`}
       >
-        <p className={globalStyles.gap}>
-          {resumeAboutMeTranslations[languageState]}
-        </p>
+        <p className={globalStyles.gap}>{resume[languageState]}</p>
 
         <Button
           label={
@@ -54,21 +49,27 @@ export const AboutMeComponent: React.FC = () => {
           endIconAnimation
         />
 
-        <CallToActionAboutMeTranslations languageSelected={languageState} />
+        {languageState === 'en' ? (
+          <p className={globalStyles.gap}>
+            Let's work together to bring your vision to{' '}
+            <span className={styles.firstChildSpan}>life</span> and create a{' '}
+            <span className={styles.secondChildSpan}>stand out</span> digital
+          </p>
+        ) : (
+          <p className={globalStyles.gap}>
+            Trabajemos juntos para dar <span>vida</span> a su visión y crear una
+            presencia digital <span>destacada.</span>
+          </p>
+        )}
 
         <AboutTags />
       </main>
 
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <AboutMeTranslations languageSelected={languageState} />
-        <div className={modalStyles.closeButtonContainer}>
-          <Button
-            label={languageState === 'en' ? 'CLOSE' : 'CERRAR'}
-            color="white"
-            onClick={closeModal}
-          />
-        </div>
-      </Modal>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        languageSelected={languageState}
+      />
     </section>
   );
 };

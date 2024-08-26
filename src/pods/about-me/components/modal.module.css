@@ -17,10 +17,15 @@
 .modal {
   position: relative;
 
+  font-size: 14px;
+  font-weight: var(--inter-font-semi-thin);
+  line-height: 1.8;
+
   background: var(--primary-color-dark);
   border-radius: var(--border-radius-box);
 
-  padding: 2rem;
+  padding: 6rem;
+  padding-block: 4rem 3rem;
   width: min(90%, 1200px);
   max-height: 90dvh;
   overflow: auto;
@@ -38,6 +43,13 @@
   100% {
     transform: scale(1);
   }
+}
+
+.imageBg {
+  background-image: url('src/assets/images/shapeBG-opacity12.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  
 }
 
 .closeButton {
@@ -58,16 +70,56 @@
 }
 
 .content {
-  margin-top: 1.5rem;
+  margin-block: 0rem 2rem;
 
-  & h3 {
-    padding-block: 1rem 0rem;
+  & p {
     margin: 0;
+    padding-block: 1rem;
+    font-size: 15px;
+    font-weight: var(--inter-font-semi-thin);
+    line-height: 1.7;
   }
 }
 
+.lineBreak {
+  display: flex;
+  height: 8px;
+}
+
+.styledParagraph {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-block: 1rem;
+
+  gap: 2rem;
+}
+
+.outlinedParagraph {
+  width: 100%;
+  padding-inline: 2rem;
+  padding-block: 0.5rem;
+
+  border: 1px solid var(--neutral-color);
+  border-radius: var(--border-radius-box);
+}
+
+.reverseParagraph {
+  flex-direction: row-reverse;
+}
+
+.imageClass0 {
+  max-height: 170px;
+}
+.imageClass1 {
+  max-height: 250px;
+}
+.imageClass2 {
+  max-height: 270px;
+}
+
 .closingQuote {
-  padding-block: 2rem;
+  padding-block: 0 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

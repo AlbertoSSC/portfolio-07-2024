@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useLanguageContext } from '@/core/language.context';
 import { copyToClipboard } from '@/common/components/copy-to-clipBoard';
+import { SectionTagTitle } from '@/common/components/section-Tag-Title';
 
 import CopyIcon from '../../assets/images/icons/copy-icon.svg';
 import ErathGlobeIcon from '../../assets/images/icons/internet-icon.svg';
@@ -18,13 +19,12 @@ export const ContactComponent: React.FC = () => {
     <section
       className={`${globalStyles.componentContainer} ${styles.contactContainer}`}
     >
-      <header className={styles.contactStyle}>
-        <h3
-          className={`${globalStyles.sectionTitleShape} ${globalStyles.secondary}`}
-        >
-          {languageState === 'en' ? 'CONTACT' : 'CONTACTO'}
-        </h3>
-      </header>
+      <SectionTagTitle
+        languageSelected={languageState}
+        labelEn="CONTACT"
+        labelEs="CONTACTO"
+        secondary
+      />
 
       <main className={`${globalStyles.centerContent} ${styles.contactStyle}`}>
         <div className={styles.contactContent}>
