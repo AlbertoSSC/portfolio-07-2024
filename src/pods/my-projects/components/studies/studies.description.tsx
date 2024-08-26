@@ -39,6 +39,10 @@ export const StudiesDescriptionComponent: React.FC<Props> = props => {
           <span>{languageState === 'en' ? '& MASTER' : 'DE MÁSTER'}</span>
           <span>{languageState === 'en' ? 'PROJECTS' : 'Y BOOTCAMP'}</span>
         </div>
+
+        <div className={styles.line}>
+          <div className={styles.line} />
+        </div>
       </div>
     </>
   );

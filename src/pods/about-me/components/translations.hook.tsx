@@ -4,7 +4,7 @@ export const useAboutMeTranslations = () => {
       'Hi! I am Alberto Santiago Sánchez Cisneros. I currently reside in my hometown of Málaga, a place I adore and consider ideal for living. However, I had the opportunity to live in Madrid for almost six years, and I am fully open to new opportunities that involve relocating. I am always ready to explore and enjoy new experiences.',
     ],
     es: [
-      '¡Hola! Soy Alberto Santiago Sánchez Cisneros. Actualmente resido en mi ciudad natal, Málaga, un lugar que adoro y que considero ideal para vivir. Sin embargo, he tenido la oportunidad de residir en Madrid durante casi seis años, y estoy totalmente abierto a nuevas oportunidades que impliquen mudarme a cualquier lugar, siempre dispuesto a explorar y disfrutar de nuevas experiencias.',
+      '¡Hola! Soy Alberto Santiago Sánchez Cisneros. Actualmente, resido en mi ciudad natal, Málaga, un lugar que adoro y que considero ideal para vivir. Sin embargo, he tenido la oportunidad de residir en Madrid durante casi seis años, y estoy totalmente abierto a nuevas oportunidades que impliquen mudarme a cualquier lugar, siempre dispuesto a explorar y disfrutar de nuevas experiencias.',
     ],
   };
   const professionalBackground = {
@@ -22,7 +22,7 @@ export const useAboutMeTranslations = () => {
 
   const currentEndeavors = {
     en: [
-      'I am on a path of self-learning and continuous growth. I am developing applications as a freelancer and expanding my knowledge through a Full Stack Development course at the University of Helsinki. My goal is to join an organization where I can contribute and continue to grow as a professional.',
+      'I am on a path of self-learning and continuous growth. I am currently developing applications as a freelancer and expanding my knowledge through a Full Stack Development course at the University of Helsinki. My goal is to join an organization where I can contribute and continue to grow professionally.',
     ],
     es: [
       'Me encuentro en un camino de autoaprendizaje y crecimiento continuo. Estoy desarrollando aplicaciones como freelancer y ampliando mis conocimientos a de un curso de Full Stack Development en la Universidad de Helsinki. Mi objetivo es integrarme en una organización donde pueda contribuir y seguir como profesional.',
@@ -30,7 +30,7 @@ export const useAboutMeTranslations = () => {
   };
 
   const resume = {
-    en: "Hello! I'm Alberto, a front-end developer with a background in design and audio-visual production, enabling me to creatively transform ideas into reality.",
+    en: "Hello! I'm Alberto, a front-end developer with a background in design and audiovisual production, enabling me to creatively transform ideas into reality.",
     es: '¡Hola! Soy Alberto, un desarrollador front-end con experiencia en diseño y producción audiovisual, lo que me permite transformar las ideas en realidad de manera creativa.',
   };
 

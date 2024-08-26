@@ -15,6 +15,8 @@ export const ContactComponent: React.FC = () => {
 
   const [showPopover, setShowPopover] = React.useState(false);
 
+  const date = new Date();
+
   return (
     <section
       className={`${globalStyles.componentContainer} ${styles.contactContainer}`}
@@ -82,6 +84,38 @@ export const ContactComponent: React.FC = () => {
           </section>
         </div>
       </main>
+
+      <footer className={styles.footerStyle}>
+        <div className={styles.footerContent}>
+          <div
+            className={styles.goUp}
+            onClick={() =>
+              window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth',
+              })
+            }
+          >
+            <div className={styles.goUpLine} />
+            <img
+              src="src/assets/images/icons/component/arrow-up.svg"
+              alt="arrow up"
+              height={40}
+            />
+
+            <div className={styles.homeText}>
+              <span>{languageState === 'en' ? 'HOME' : 'INICIO'}</span>
+              <span>{languageState === 'en' ? 'HOME' : 'INICIO'}</span>
+              <span>{languageState === 'en' ? 'HOME' : 'INICIO'}</span>
+            </div>
+          </div>
+
+          <span>{date.getFullYear()}</span>
+          <div className={styles.divider} />
+          <span>Alberto Santiago Sánchez Cisneros</span>
+        </div>
+      </footer>
     </section>
   );
 };

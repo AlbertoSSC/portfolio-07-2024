@@ -28,7 +28,7 @@ export const StudiesProjectsShowcase = () => {
 
   //* --styles-- */
 
-  const projectsFrameContainerStyles = `${styles.projectsFrameContainer} 
+  const projectsFrameContainerStyles = `${styles.projectsFrameContainer} ${styles.studiesFrameContainer}
   ${styles.frameDark} ${animation.studies}
   ${showProjects ? animation.outlineHeight : ''}`;
 

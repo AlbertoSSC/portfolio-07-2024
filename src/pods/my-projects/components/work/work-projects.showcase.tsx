@@ -66,7 +66,7 @@ export const WorkProjectsShowcase = () => {
 
         <div className={illustrationStyles}>
           <img
-            src="src/assets/images/illustWork.webp"
+            src="src/assets/images/work illustration.webp"
             alt="Illustration of a person coding"
           />
         </div>

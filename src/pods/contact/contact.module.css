@@ -1,6 +1,6 @@
 .contactContainer {
   justify-content: flex-start;
-  padding-block: 4rem;
+  padding-top: 4rem;
   width: 100dvw;
   height: 100vh;
   z-index: 10;
@@ -117,6 +117,7 @@
     max-width: 550px;
     padding-block: 2rem;
   }
+
   @media (width < 576px) {
     font-size: 22px;
     line-height: 1.7;
@@ -124,4 +125,118 @@
     max-width: 300px;
     padding-block: 1rem;
   }
+}
+
+.contactStyle {
+  width: min(100%, 1200px);
+}
+
+.footerStyle {
+  width: 100%;
+  height: 100%;
+
+  padding-block: 2rem;
+
+  background-color: var(--primary-color-dark);
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  font-weight: var(--inter-font-bold);
+
+  color: var(--primary-color);
+}
+
+.goUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+
+  height: 80px;
+
+  border: 2px solid var(--accent-color);
+  border-radius: var(--border-radius-box);
+
+  font-size: 20px;
+  font-weight: var(--inter-font-semi-bold);
+  color: var(--accent-color);
+  cursor: pointer;
+
+  transition: all 0.5s ease;
+
+  & span {
+    transition: all 0.5s ease;
+  }
+
+  & img {
+    width: 100%;
+    transition: all 0.5s ease;
+  }
+}
+
+.homeText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & span:nth-child(2) {
+    transform: translateY(-150px);
+  }
+  & span:nth-child(3) {
+    transform: translateY(-130px);
+  }
+}
+
+.goUp:hover .goUpLine {
+  opacity: 1;
+  transform: translateY(15px);
+}
+
+.goUp:hover span:nth-child(3) {
+  transition: all 0.8s ease;
+  transform: translateY(-20px);
+  font-size: 32px;
+}
+.goUp:hover span:nth-child(2) {
+  transition: all 0.8s ease;
+  transform: translateY(-55px);
+  font-size: 32px;
+}
+.goUp:hover span:nth-child(1) {
+  transition: all 0.8s ease;
+  transform: translateY(80px);
+  opacity: 0;
+}
+
+.goUp:hover img {
+  transition: transform 0.8s ease, opacity 0.8s ease 0.3s;
+  transform: translateY(-60px);
+  opacity: 0;
+}
+
+.goUpLine {
+  width: 100%;
+
+  background-color: var(--accent-color);
+  transform: translateY(-100px);
+  opacity: 0;
+  border-radius: 4px;
+  border: 3px solid var(--accent-color);
+
+  transition: all 0.8s ease-out;
+}
+
+.divider {
+  width: 10%;
+  height: 2px;
+  background-color: var(--primary-color);
 }

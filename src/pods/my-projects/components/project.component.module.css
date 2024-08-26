@@ -2,7 +2,7 @@
   position: relative;
   border-radius: 32px;
   padding: 1rem;
-  width: 750px;
+  width: 800px;
   height: 600px;
 
   display: flex;
@@ -67,7 +67,7 @@
   transform: translate(-15%, -30%);
   font-family: 'NorthblueRegular';
   font-size: 196px;
-  color: var(--primary-color);
+  color: var(--neutral-color-dark);
   opacity: 0.08;
 
   &.dark {
@@ -118,6 +118,12 @@
   font-size: 48px;
   font-weight: var(--inter-font-black);
   line-height: 1;
+
+  @media (width < 770px) {
+    font-size: 36px;
+    line-height: 1;
+    padding-block: 2rem 1.5rem;
+  }
 
   @media (width < 576px) {
     font-size: 32px;
@@ -452,7 +458,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  transform: translate(28%, -5%);
+  transform: translate(25%, -10%);
+  scale: 0.9;
 
   pointer-events: none;
 
@@ -462,7 +469,7 @@
 
   transition: all 0.5s ease;
 
-  @media (height > 960px) {
+  @media (height > 1200px) {
     transform: translate(5%, 38%);
 
     & img {
@@ -471,7 +478,8 @@
   }
 
   @media (width < 770px) {
-    transform: translate(5%, 44%);
+    scale: 1.5;
+    transform: translate(29%, 62%);
   }
 
   @media (width < 576px) {
@@ -479,12 +487,21 @@
   }
 }
 
+.studiesFrameContainer {
+  height: 600px;
+
+  @media (width < 770px) {
+    height: 550px;
+  }
+
+  transition: all 0.5s ease;
+}
+
 .studiesIllust {
   position: absolute;
   top: 0;
   right: 0;
-  transform: translate(33%, -12%);
-  scale: 0.8;
+  transform: translate(30%, -2%);
 
   pointer-events: none;
 
@@ -494,7 +511,7 @@
 
   transition: all 0.5s ease;
 
-  @media (height > 960px) {
+  @media (height > 1200px) {
     transform: translate(10%, 15%);
 
     & img {
@@ -503,7 +520,35 @@
   }
 
   @media (width < 770px) {
-    transform: translate(8%, 20%);
+    scale: 1.5;
+    transform: translate(29%, 55%);
+  }
+
+  @media (width < 576px) {
+    display: none;
+  }
+}
+
+.line {
+  width: 150%;
+  height: 6px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  margin-left: 6rem;
+
+  background-color: var(--neutral-color-dark);
+  opacity: 0.1;
+
+  & :first-child {
+    width: 100%;
+    margin-top: 0.8rem;
+    margin-left: 3rem;
+    opacity: 1;
+  }
+
+  @media (width < 770px) {
+    margin-left: 0;
   }
 
   @media (width < 576px) {
