@@ -1,5 +1,5 @@
 .outlineHeight {
-  height: 450px;
+  height: 430px;
   transition: all 0.5s ease;
 
   @media (width <770px) {
@@ -7,7 +7,7 @@
   }
 
   &.studies {
-    height: 563px;
+    height: 538px;
 
     @media (width < 770px) {
       height: fit-content;
@@ -39,7 +39,7 @@
 @keyframes numberTranslation {
   0% {
     color: var(--neutral-color);
-    transform: translate(-160px, 28px);
+    transform: translate(-160px, 90px);
   }
   100% {
     color: var(--primary-color);
@@ -52,19 +52,29 @@
 }
 @keyframes numberTranslationDark {
   0% {
-    transform: translate(-160px, 45px);
+    transform: translate(-160px, 90px);
   }
   100% {
     transform: translate(0px, 0px);
   }
 }
-@keyframes numberTranslation {
-  0% {
-    color: var(--neutral-color);
-    transform: translate(-160px, 45px);
+
+.animateWorkIllustration {
+  position: absolute;
+  transform: translate(62%, -5%) scale(0.7);
+  transition: all 0.5s ease;
+
+  @media (width < 770px) {
+    transform: translate(45%, -5%) scale(0.7);
   }
-  100% {
-    color: var(--primary-color);
-    transform: translate(0px, 0px);
+}
+
+.animateStudiesIllustration {
+  position: absolute;
+  transform: translate(78%, -8%) scale(0.85);
+  transition: all 0.5s ease;
+
+  @media (width < 770px) {
+    transform: translate(55%, -28%) scale(0.55);
   }
 }

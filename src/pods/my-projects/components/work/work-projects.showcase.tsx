@@ -48,6 +48,10 @@ export const WorkProjectsShowcase = () => {
     animation.projectsNumberBgAnimation
   } ${!showProjects ? animation.displayNone : ''}`;
 
+  const illustrationStyles = `${styles.workIllust} ${
+    showProjects ? animation.animateWorkIllustration : ''
+  }`;
+
   /* --styles-- */
 
   return (
@@ -59,6 +63,13 @@ export const WorkProjectsShowcase = () => {
             setShowProjects={setShowProjects}
           />
         </section>
+
+        <div className={illustrationStyles}>
+          <img
+            src="src/assets/images/illustWork.webp"
+            alt="Illustration of a person coding"
+          />
+        </div>
 
         <section className={techStackStyles}>
           <WorkTechStackComponent showProjects={showProjects} />

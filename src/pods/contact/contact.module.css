@@ -3,6 +3,7 @@
   padding-block: 4rem;
   width: 100dvw;
   height: 100vh;
+  z-index: 10;
 
   background-color: white;
 }

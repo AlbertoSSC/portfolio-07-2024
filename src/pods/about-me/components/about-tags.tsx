@@ -19,8 +19,6 @@ export const AboutTags = () => {
       <div className={styles.tagRow}>
         <Tag label="Figma" style="primary" />
         <Tag label="Git & GitHub" style="primary" />
-        <Tag label="Accessibility" style="primary" />
-        <Tag label="Testing" style="primary" />
       </div>
     </section>
   );

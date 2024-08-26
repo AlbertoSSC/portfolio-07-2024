@@ -24,8 +24,6 @@
   background: var(--primary-color-dark);
   border-radius: var(--border-radius-box);
 
-  padding: 6rem;
-  padding-block: 4rem 3rem;
   width: min(90%, 1200px);
   max-height: 90dvh;
   overflow: auto;
@@ -34,6 +32,14 @@
 
   transition: all 0.5s ease;
   animation: scaleUp 0.8s ease;
+
+  @media (width < 770px) {
+    padding: 0rem;
+  }
+
+  @media (width < 576px) {
+    padding: 0rem;
+  }
 }
 
 @keyframes scaleUp {
@@ -46,10 +52,10 @@
 }
 
 .imageBg {
+  margin-block: 2rem;
   background-image: url('src/assets/images/shapeBG-opacity12.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  
+  background-repeat: no-repeat round;
+  background-size: auto;
 }
 
 .closeButton {
@@ -66,6 +72,18 @@
 
   &:hover {
     transform: scale(1.2);
+  }
+}
+
+.paddingStyle {
+  padding: 4rem 6rem;
+
+  @media (width < 770px) {
+    padding: 4rem;
+  }
+
+  @media (width < 576px) {
+    padding: 1rem;
   }
 }
 
@@ -93,6 +111,11 @@
   padding-block: 1rem;
 
   gap: 2rem;
+
+  @media (width < 960px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .outlinedParagraph {
@@ -106,6 +129,12 @@
 
 .reverseParagraph {
   flex-direction: row-reverse;
+
+  @media (width < 960px) {
+    flex-direction: column;
+    align-items: center;
+    padding-block: 0.5rem;
+  }
 }
 
 .imageClass0 {
@@ -116,6 +145,7 @@
 }
 .imageClass2 {
   max-height: 270px;
+  padding-top: 1rem;
 }
 
 .closingQuote {

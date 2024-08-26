@@ -52,6 +52,10 @@ export const StudiesProjectsShowcase = () => {
     animation.projectsNumberBgAnimationDark
   } ${!showProjects ? animation.displayNone : ''}`;
 
+  const illustrationStyles = `${styles.studiesIllust} ${
+    showProjects ? animation.animateStudiesIllustration : ''
+  }`;
+
   /* --styles-- */ //
 
   return (
@@ -63,6 +67,13 @@ export const StudiesProjectsShowcase = () => {
             setShowProjects={setShowProjects}
           />
         </section>
+
+        <div className={illustrationStyles}>
+          <img
+            src="src/assets/images/illustStud.webp"
+            alt="Illustration of a person coding"
+          />
+        </div>
 
         <section className={techStackStyles}>
           <StudiesTechStackComponent showProjects={showProjects} />
