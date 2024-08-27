@@ -33,6 +33,11 @@ export const MyProjectsComponent: React.FC = () => {
       AnimationListOptions
     ][] = [
       [
+        '#components-container',
+        { display: ['none', 'flex'] },
+        { at: 0.145, easing: 'ease-in-out', duration: 0.12 },
+      ],
+      [
         '#projects-tag',
         { y: [1200, 0] },
         { at: 0.1, easing: 'ease-in-out', duration: 0.12 },
@@ -96,7 +101,7 @@ export const MyProjectsComponent: React.FC = () => {
     <article
       className={`${globalStyles.componentContainer} ${styles.workProjectsContainer} ${styles.height}`}
     >
-      <div className={`${globalStyles.componentContainer} ${styles.sticky}`}>
+      <div id='components-container' className={`${globalStyles.componentContainer} ${styles.sticky}`}>
         <SectionTagTitle
           id="projects-tag"
           languageSelected={languageState}
