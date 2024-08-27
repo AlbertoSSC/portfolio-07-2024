@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ArrowGoBack } from '@/assets/images/icons/component/backArrow';
+import workIllustration from '@/assets/images/work illustration.webp';
 
 import { Button } from '@/common';
 import { useLanguageContext } from '@/core/language.context';
@@ -65,10 +66,7 @@ export const WorkProjectsShowcase = () => {
         </section>
 
         <div className={illustrationStyles}>
-          <img
-            src="src/assets/images/work illustration.webp"
-            alt="Illustration of a person coding"
-          />
+          <img src={workIllustration} alt="Illustration of a person coding" />
         </div>
 
         <section className={techStackStyles}>

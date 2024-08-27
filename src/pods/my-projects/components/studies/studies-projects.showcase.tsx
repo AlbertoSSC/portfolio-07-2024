@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ArrowGoBack } from '@/assets/images/icons/component/backArrow';
+import studiesIllustration from '@/assets/images/illustStud.webp';
 
 import { Button } from '@/common';
 import { useLanguageContext } from '@/core/language.context';
@@ -28,7 +29,9 @@ export const StudiesProjectsShowcase = () => {
 
   //* --styles-- */
 
-  const projectsFrameContainerStyles = `${styles.projectsFrameContainer} ${styles.studiesFrameContainer}
+  const projectsFrameContainerStyles = `${styles.projectsFrameContainer} ${
+    styles.studiesFrameContainer
+  }
   ${styles.frameDark} ${animation.studies}
   ${showProjects ? animation.outlineHeight : ''}`;
 
@@ -70,7 +73,7 @@ export const StudiesProjectsShowcase = () => {
 
         <div className={illustrationStyles}>
           <img
-            src="src/assets/images/illustStud.webp"
+            src={studiesIllustration}
             alt="Illustration of a person coding"
           />
         </div>

@@ -4,8 +4,9 @@ import { useLanguageContext } from '@/core/language.context';
 import { copyToClipboard } from '@/common/components/copy-to-clipBoard';
 import { SectionTagTitle } from '@/common/components/section-Tag-Title';
 
-import CopyIcon from '../../assets/images/icons/copy-icon.svg';
-import ErathGlobeIcon from '../../assets/images/icons/internet-icon.svg';
+import CopyIcon from '@/assets/images/icons/copy-icon.svg';
+import ErathGlobeIcon from '@/assets/images/icons/internet-icon.svg';
+import ArrowUp from '@/assets/images/icons/component/arrow-up.svg';
 
 import globalStyles from '@/styles/global-styles.module.css';
 import styles from './contact.module.css';
@@ -14,8 +15,6 @@ export const ContactComponent: React.FC = () => {
   const { languageState } = useLanguageContext();
 
   const [showPopover, setShowPopover] = React.useState(false);
-
-  const date = new Date();
 
   return (
     <section
@@ -86,6 +85,9 @@ export const ContactComponent: React.FC = () => {
       </main>
 
       <footer className={styles.footerStyle}>
+        <div className={styles.glassAnimation}>
+          <div className={styles.glassShape} />
+        </div>
         <div className={styles.footerContent}>
           <div
             className={styles.goUp}
@@ -98,22 +100,28 @@ export const ContactComponent: React.FC = () => {
             }
           >
             <div className={styles.goUpLine} />
-            <img
-              src="src/assets/images/icons/component/arrow-up.svg"
-              alt="arrow up"
-              height={40}
-            />
+            <img src={ArrowUp} alt="arrow up" height={40} />
 
             <div className={styles.homeText}>
+              <span>{languageState === 'en' ? 'HOME' : 'INICIO'}</span>
               <span>{languageState === 'en' ? 'HOME' : 'INICIO'}</span>
               <span>{languageState === 'en' ? 'HOME' : 'INICIO'}</span>
               <span>{languageState === 'en' ? 'HOME' : 'INICIO'}</span>
             </div>
           </div>
 
-          <span>{date.getFullYear()}</span>
           <div className={styles.divider} />
-          <span>Alberto Santiago Sánchez Cisneros</span>
+          <div className={styles.footerThanks}>
+            <span className={styles.footerDate}>
+              {languageState === 'en'
+                ? 'THANKS FOR VISITING!'
+                : '¡GRACIAS POR SU VISITA!'}
+            </span>
+            <div className={styles.nameText}>
+              <span>Alberto Santiago</span>
+              <span>Sánchez Cisneros</span>
+            </div>
+          </div>
         </div>
       </footer>
     </section>
