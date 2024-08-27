@@ -1,6 +1,7 @@
 import globalStyles from '@/styles/global-styles.module.css';
 
 interface Props {
+  id?: string;
   languageSelected: 'en' | 'es';
   labelEn: string;
   labelEs: string;
@@ -8,6 +9,7 @@ interface Props {
 }
 
 export const SectionTagTitle: React.FC<Props> = ({
+  id,
   languageSelected,
   labelEn,
   labelEs,
@@ -15,6 +17,7 @@ export const SectionTagTitle: React.FC<Props> = ({
 }) => {
   return (
     <section
+      id={id}
       className={`${
         secondary
           ? globalStyles.sectionTitleHeaderSecondary

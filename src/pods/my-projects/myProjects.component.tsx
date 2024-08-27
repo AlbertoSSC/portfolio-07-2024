@@ -33,6 +33,31 @@ export const MyProjectsComponent: React.FC = () => {
       AnimationListOptions
     ][] = [
       [
+        '#projects-tag',
+        { y: [1200, 0] },
+        { at: 0.1, easing: 'ease-in-out', duration: 0.12 },
+      ],
+      [
+        '#progress-divider',
+        { x: [targetValue, 0] },
+        { at: 0.1, easing: 'ease-in-out', duration: 0.12 },
+      ],
+      [
+        '#progress-guide',
+        { scale: [0, 1] },
+        { at: 0.15, easing: 'ease-in-out', duration: 0.07 },
+      ],
+      [
+        '#professional-work',
+        { opacity: [0, 1] },
+        { at: 0.17, easing: 'ease-in-out', duration: 0.05 },
+      ],
+      [
+        '#work',
+        { x: [-targetValue, 0], opacity: [0, 1] },
+        { at: 0.12, easing: 'ease-in-out', duration: 0.1 },
+      ],
+      [
         '#work',
         { x: [0, targetValue], opacity: [1, 0] },
         { at: 0.3, easing: 'ease-in-out', duration: 0.1 },
@@ -42,7 +67,6 @@ export const MyProjectsComponent: React.FC = () => {
         { scaleX: [0, 1] },
         { at: 0.15, easing: 'ease-in-out', duration: 0.35 },
       ],
-
       [
         '#professional-work',
         { opacity: [1, 0], x: [0, -585] },
@@ -74,12 +98,12 @@ export const MyProjectsComponent: React.FC = () => {
     >
       <div className={`${globalStyles.componentContainer} ${styles.sticky}`}>
         <SectionTagTitle
+          id="projects-tag"
           languageSelected={languageState}
           labelEn="PROJECTS"
           labelEs="PROYECTOS"
         />
-
-        <div className={styles.projectsDivider}>
+        <div className={`${styles.projectsDivider}`}>
           <h4 id="professional-work" className={`${globalStyles.skewItalic}`}>
             {languageState === 'en'
               ? 'Professional work'
@@ -89,9 +113,12 @@ export const MyProjectsComponent: React.FC = () => {
             {languageState === 'en' ? 'In trainig' : 'En formación'}
           </h4>
           <div id="progress-divider" className={styles.divider}></div>
-          <div className={`${styles.divider} ${styles.divider2}`}></div>
+          <div
+            id="progress-guide"
+            className={`${styles.divider} ${styles.divider2}`}
+          ></div>
         </div>
-        <main className={`${styles.projectsMain}`}>
+        <main className={`${styles.projectsMain} `}>
           <div className={`${styles.flex}`}>
             <section
               id="work"
