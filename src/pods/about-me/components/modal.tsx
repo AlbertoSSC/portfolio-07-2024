@@ -1,7 +1,7 @@
 import React from 'react';
 
 import burguer from '@/assets/images/Burguer.webp';
-import clapper from '@/assets/images/vectorAdClapperclaqueta_3.png';
+import clapper from '@/assets/images/vectorAdClapperclaqueta_3.webp';
 import devui from '@/assets/images/devUI.webp';
 
 import { useAboutMeTranslations } from './translations.hook';
