@@ -118,7 +118,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: var(--inter-font-medium);
 
   & > span {
@@ -135,6 +135,8 @@
   position: relative;
   padding-inline: 0.5rem;
   transition: all 0.3s ease;
+
+  
 
   &:hover,
   &:focus,
