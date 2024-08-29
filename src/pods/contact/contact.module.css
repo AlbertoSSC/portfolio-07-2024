@@ -52,9 +52,11 @@
     text-decoration: underline;
     letter-spacing: 2px;
 
+    
     transition: color 0.5s ease;
-
+    
     &:hover {
+      cursor: pointer;
       color: var(--primary-color);
       & img {
         opacity: 0.65;
