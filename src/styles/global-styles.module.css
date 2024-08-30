@@ -264,6 +264,7 @@
   width: max-content;
   padding: 0.8rem 2rem;
   cursor: pointer;
+  pointer-events: auto;
 
   background-color: transparent;
 

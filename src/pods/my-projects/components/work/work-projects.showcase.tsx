@@ -66,7 +66,7 @@ export const WorkProjectsShowcase = () => {
         </section>
 
         <div className={illustrationStyles}>
-          <img src={workIllustration} alt="Illustration of a person coding" />
+          <img src={workIllustration} alt="person coding" />
         </div>
 
         <section className={techStackStyles}>

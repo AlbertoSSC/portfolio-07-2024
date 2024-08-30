@@ -3,6 +3,7 @@
   justify-content: start;
   height: 300vh;
   padding-block: 0rem 6rem;
+  pointer-events: none;
 
   @media (width < 576px) {
     width: 350px;

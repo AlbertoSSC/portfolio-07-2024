@@ -53,19 +53,19 @@ export const MyProjectsComponent: React.FC = () => {
       AnimationListOptions
     ][] = [
       [
-        '#components-container',
-        { display: ['none', 'flex'] },
-        { at: 0.145, easing: 'ease-in-out', duration: 0.12 },
-      ],
-      [
         '#projects-tag',
         { y: [1200, 0] },
-        { at: 0.1, easing: 'ease-in-out', duration: 0.12 },
+        { at: 0.08, easing: 'ease-in-out', duration: 0.12 },
       ],
       [
         '#progress-divider',
         { x: [targetValue, 0] },
         { at: 0.1, easing: 'ease-in-out', duration: 0.12 },
+      ],
+      [
+        '#progress-divider',
+        { scaleX: [0, 1] },
+        { at: 0.15, easing: 'ease-in-out', duration: 0.35 },
       ],
       [
         '#progress-guide',
@@ -74,8 +74,8 @@ export const MyProjectsComponent: React.FC = () => {
       ],
       [
         '#professional-work',
-        { opacity: [0, 1] },
-        { at: 0.17, easing: 'ease-in-out', duration: 0.05 },
+        { opacity: [0, 1], y: [400, 0] },
+        { at: 0.15, easing: 'ease-in-out', duration: 0.05 },
       ],
       [
         '#work',
@@ -86,11 +86,6 @@ export const MyProjectsComponent: React.FC = () => {
         '#work',
         { x: [0, targetValue], opacity: [1, 0] },
         { at: 0.3, easing: 'ease-in-out', duration: 0.1 },
-      ],
-      [
-        '#progress-divider',
-        { scaleX: [0, 1] },
-        { at: 0.15, easing: 'ease-in-out', duration: 0.35 },
       ],
       [
         '#professional-work',
