@@ -19,11 +19,31 @@ import { SectionTagTitle } from '@/common/components/section-Tag-Title';
 export const MyProjectsComponent: React.FC = () => {
   const { languageState } = useLanguageContext();
 
-  React.useEffect(() => {
+  const initializeAnimations = () => {
     const screenWidth = window.innerWidth;
     const targetValue = screenWidth < 1200 ? -screenWidth : -1200;
 
     if (screenWidth < 576) {
+      const sequence: [
+        ElementOrSelector,
+        MotionKeyframesDefinition,
+        AnimationListOptions
+      ][] = [
+        [
+          '#components-container',
+          { display: ['none', 'flex'] },
+          { at: 0, duration: 0.1 },
+        ],
+        ['#projects-tag', { y: [], x: [-200, 0] }, { at: 0, duration: 0.004 }],
+        ['#work', { x: [300, 0], opacity: [1] }, { at: '<', duration: 0.006 }],
+        [
+          '#studies',
+          { x: [-300, 0], opacity: [1] },
+          { at: '<', duration: 0.01 },
+        ],
+      ];
+      scroll(timeline(sequence, { duration: 0.3 }));
+
       return;
     }
 
@@ -84,7 +104,7 @@ export const MyProjectsComponent: React.FC = () => {
       ],
       [
         '#studies',
-        { x: [0, targetValue], opacity: [0, 1] },
+        { x: [0, '-100%'], opacity: [0, 1] },
         { at: 0.3, easing: 'ease-in-out', duration: 0.05 },
       ],
       [
@@ -94,14 +114,32 @@ export const MyProjectsComponent: React.FC = () => {
       ],
     ];
 
-    scroll(timeline(sequence, { duration: 1 }));
+    const animation = timeline(sequence, { duration: 1 });
+    scroll(animation);
+  };
+
+  React.useEffect(() => {
+    initializeAnimations();
+
+    const handleResize = () => {
+      initializeAnimations();
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
     <article
       className={`${globalStyles.componentContainer} ${styles.workProjectsContainer} ${styles.height}`}
     >
-      <div id='components-container' className={`${globalStyles.componentContainer} ${styles.sticky}`}>
+      <div
+        id="components-container"
+        className={`${globalStyles.componentContainer} ${styles.sticky}`}
+      >
         <SectionTagTitle
           id="projects-tag"
           languageSelected={languageState}
@@ -124,21 +162,19 @@ export const MyProjectsComponent: React.FC = () => {
           ></div>
         </div>
         <main className={`${styles.projectsMain} `}>
-          <div className={`${styles.flex}`}>
-            <section
-              id="work"
-              className={`${globalStyles.centerContent} ${styles.flex}`}
-            >
-              <WorkProjectsShowcase />
-            </section>
+          <section
+            id="work"
+            className={`${globalStyles.centerContent} ${styles.flex}`}
+          >
+            <WorkProjectsShowcase />
+          </section>
 
-            <section
-              id="studies"
-              className={`${globalStyles.centerContent} ${styles.flex} ${styles.studies}`}
-            >
-              <StudiesProjectsShowcase />
-            </section>
-          </div>
+          <section
+            id="studies"
+            className={`${globalStyles.centerContent} ${styles.flex} ${styles.studies}`}
+          >
+            <StudiesProjectsShowcase />
+          </section>
         </main>
       </div>
     </article>
