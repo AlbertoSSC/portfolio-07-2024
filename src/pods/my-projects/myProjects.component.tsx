@@ -52,6 +52,7 @@ export const MyProjectsComponent: React.FC = () => {
       MotionKeyframesDefinition,
       AnimationListOptions
     ][] = [
+      ['#components-container', { display: ['none', 'flex'] }, { at: 0.145 }],
       [
         '#projects-tag',
         { y: [1200, 0] },
